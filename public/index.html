@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+
+<html lang="vi">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PhysAssess | Đánh giá năng lực Vật lý 10</title>
+<style>
+:root{--navy:#16324f;--blue:#2764a5;--cyan:#eaf4ff;--bg:#f4f7fb;--text:#1e293b;--muted:#64748b;--line:#dbe4ef;--green:#16845b;--amber:#b7791f;--red:#c24141;--white:#fff}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--text)}button,input,select,textarea{font:inherit}button{cursor:pointer;border:0;border-radius:10px;padding:10px 14px;font-weight:650}button:focus,input:focus,select:focus,textarea:focus{outline:3px solid #b7d8ff;outline-offset:1px}.primary{background:var(--blue);color:#fff}.secondary{background:#e8eef6;color:var(--navy)}.danger{background:#fff0f0;color:var(--red)}.small{padding:7px 10px;font-size:13px}.app{display:grid;grid-template-columns:245px 1fr;min-height:100vh}.sidebar{background:var(--navy);color:white;padding:24px 16px;display:flex;flex-direction:column;gap:20px}.brand{display:flex;align-items:center;gap:12px;padding:4px 8px 18px;border-bottom:1px solid #ffffff26}.logo{width:42px;height:42px;border-radius:13px;background:#fff;color:var(--blue);display:grid;place-items:center;font-weight:900;font-size:20px}.brand h1{font-size:17px;margin:0}.brand p{font-size:12px;color:#c8d8e8;margin:4px 0 0}.nav-label{font-size:11px;color:#a9bfd5;text-transform:uppercase;letter-spacing:1.3px;padding:0 10px}.nav button{width:100%;display:flex;gap:12px;align-items:center;text-align:left;background:transparent;color:#d9e5f1;margin:3px 0;padding:12px}.nav button.active,.nav button:hover{background:#ffffff18;color:#fff}.nav .ico{width:22px;text-align:center}.side-note{margin-top:auto;border:1px solid #ffffff25;background:#ffffff0c;padding:14px;border-radius:14px;font-size:12px;color:#c9d7e5;line-height:1.55}.main{min-width:0}.topbar{height:76px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 30px;gap:16px}.topbar .crumb{font-size:13px;color:var(--muted)}.topbar strong{display:block;font-size:18px;margin-top:3px}.user{display:flex;align-items:center;gap:10px;font-size:13px}.avatar{width:36px;height:36px;border-radius:50%;background:#dbeafe;color:#1d4ed8;display:grid;place-items:center;font-weight:800}.content{padding:28px 30px;max-width:1500px;margin:auto}.page-head{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;margin-bottom:24px}.page-head h2{font-size:25px;margin:0 0 7px;letter-spacing:-.5px}.page-head p{margin:0;color:var(--muted);font-size:14px;line-height:1.5}.actions{display:flex;gap:8px;flex-wrap:wrap}.grid{display:grid;gap:16px}.stats{grid-template-columns:repeat(4,minmax(0,1fr));margin-bottom:20px}.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:0 2px 7px #1e293b05;min-width:0}.stat-top{display:flex;justify-content:space-between;color:var(--muted);font-size:13px}.stat-icon{width:36px;height:36px;background:var(--cyan);color:var(--blue);display:grid;place-items:center;border-radius:11px;font-size:18px}.stat-value{font-size:29px;font-weight:800;margin:14px 0 5px;letter-spacing:-.7px}.stat-foot{font-size:12px;color:var(--muted)}.two-col{grid-template-columns:1.35fr 1fr}.card-title{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:16px}.card-title h3{font-size:16px;margin:0}.card-title p{font-size:12px;color:var(--muted);margin:5px 0 0}.pill{display:inline-flex;align-items:center;gap:5px;padding:5px 9px;border-radius:99px;font-size:12px;font-weight:700;background:#edf2f7;color:#475569}.pill.green{background:#e3f7ed;color:var(--green)}.pill.amber{background:#fff4d8;color:var(--amber)}.pill.blue{background:#eaf4ff;color:var(--blue)}.progress{height:7px;background:#edf2f7;border-radius:99px;overflow:hidden}.progress span{display:block;height:100%;background:var(--blue);border-radius:99px}.phase{display:grid;grid-template-columns:36px 1fr auto;gap:12px;align-items:center;margin:17px 0}.phase-icon{width:36px;height:36px;background:#edf5ff;border-radius:10px;display:grid;place-items:center}.phase strong{font-size:13px}.phase small{display:block;color:var(--muted);font-size:12px;margin-top:4px}.task-row{display:grid;grid-template-columns:1fr 100px;gap:12px;align-items:center;margin:16px 0}.task-row strong{font-size:13px}.task-row small{display:block;color:var(--muted);font-size:12px;margin-top:4px}.task-row .progress{margin-top:8px}.task-row .pct{text-align:right;font-size:12px;color:var(--muted)}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:12px}table{border-collapse:collapse;width:100%;font-size:13px;min-width:720px}th{text-align:left;color:#526276;background:#f7f9fc;font-size:11px;text-transform:uppercase;letter-spacing:.4px}td,th{padding:13px 14px;border-bottom:1px solid #e9eef5;vertical-align:top}tbody tr:last-child td{border-bottom:0}tbody tr:hover{background:#fbfdff}.muted{color:var(--muted)}.field{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}.field label{font-size:13px;font-weight:700;color:#334155}.field input,.field select,.field textarea,input.search{width:100%;padding:11px 12px;border:1px solid #cfd9e6;border-radius:10px;background:#fff;color:var(--text)}.field textarea{min-height:90px;resize:vertical}.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.form-grid .field{margin:0}.form-actions{display:flex;gap:8px;justify-content:flex-end;margin-top:18px}.empty{padding:28px;text-align:center;color:var(--muted)}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}.tabs button{background:#e9eff6;color:#42536a}.tabs button.active{background:var(--navy);color:#fff}.rubric-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.level{border:1px solid var(--line);border-radius:12px;padding:12px;background:#fbfdff}.level b{font-size:12px;display:block;margin-bottom:7px}.level p{font-size:12px;line-height:1.5;color:#536277;margin:0}.criteria{border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:12px}.criteria-head{display:flex;justify-content:space-between;gap:12px;margin-bottom:12px}.criteria-head strong{font-size:14px}.criteria-head small{display:block;color:var(--muted);margin-top:4px}.score-options{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.score-options label{border:1px solid var(--line);border-radius:10px;padding:10px;text-align:center;font-size:12px;cursor:pointer}.score-options input{margin-right:5px;accent-color:var(--blue)}.score-options label:has(input:checked){border-color:var(--blue);background:#edf6ff}.chart-bars{display:flex;align-items:flex-end;gap:18px;height:180px;padding:14px 8px 0;border-bottom:1px solid var(--line)}.bar-wrap{height:100%;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:7px;min-width:0}.bar{width:min(45px,80%);background:linear-gradient(180deg,#5b9bd5,#2764a5);border-radius:7px 7px 0 0;min-height:3px}.bar-label{font-size:11px;color:var(--muted);text-align:center;white-space:nowrap}.bar-value{font-size:11px;font-weight:800}.notice{padding:13px 15px;border-radius:11px;background:#fff7df;color:#785416;font-size:13px;line-height:1.5;margin-bottom:16px}.hidden{display:none!important}.toast{position:fixed;right:24px;bottom:24px;background:#16324f;color:#fff;padding:13px 18px;border-radius:12px;box-shadow:0 10px 35px #0002;z-index:20;font-size:14px;max-width:calc(100vw - 40px)}.mobile-menu{display:none}.criterion-input{width:100%;min-height:68px;padding:9px;border:1px solid var(--line);border-radius:9px;font:12px/1.45 inherit;resize:vertical}.criterion-edit{display:grid;grid-template-columns:1.1fr repeat(4,1fr);gap:9px;align-items:start;margin:12px 0}.criterion-edit label{font-size:11px;font-weight:700;color:#526276;display:block;margin-bottom:5px}.criterion-edit input{width:100%;padding:9px;border:1px solid var(--line);border-radius:8px}.criterion-edit textarea{width:100%;min-height:82px;padding:8px;border:1px solid var(--line);border-radius:8px;font:12px/1.4 Arial;resize:vertical}.footer-note{font-size:12px;color:var(--muted);margin-top:18px;line-height:1.5}
+
+
+.knowledge-tools{display:grid;grid-template-columns:250px minmax(0,1fr);gap:16px;align-items:start;margin-bottom:16px}
+.knowledge-topics{position:sticky;top:12px;max-height:72vh;overflow:auto;margin-top:10px}
+.knowledge-topics button{width:100%;line-height:1.45}
+.knowledge-card.knowledge-section{margin-bottom:18px;scroll-margin-top:18px}
+.knowledge-section h3{font-size:18px;line-height:1.45}
+.knowledge-section h4{font-size:14px;margin-top:18px}
+.knowledge-section h5{font-size:13px;color:#244f7c}
+.knowledge-section p{line-height:1.75}
+.knowledge-table{margin:10px 0 16px}
+.knowledge-table table{min-width:0;font-size:12px}
+.knowledge-table th,.knowledge-table td{padding:9px 10px}
+.knowledge-list-item{padding-left:8px;margin:5px 0}
+@media(max-width:720px){.knowledge-tools{grid-template-columns:1fr}.knowledge-topics{position:static;max-height:220px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media print{.knowledge-tools{display:block}.knowledge-topics,#knowledgeSearch{display:none!important}.knowledge-section{display:block!important;break-inside:auto}.knowledge-table{overflow:visible}.knowledge-table table{min-width:0}}
+.knowledge-tools{display:grid;grid-template-columns:230px 1fr;gap:16px;align-items:start;margin-bottom:16px}
+.knowledge-topics{display:flex;flex-direction:column;gap:7px}
+.knowledge-topics button{background:#fff;border:1px solid var(--line);color:#334155;text-align:left;padding:11px 12px;font-size:13px}
+.knowledge-topics button.active{background:#eaf4ff;border-color:#8bb9e8;color:var(--navy)}
+.knowledge-card{background:#fff;border:1px solid var(--line);border-radius:15px;padding:22px;margin-bottom:14px}
+.knowledge-card h3{margin:0 0 8px;font-size:19px;color:var(--navy)}
+.knowledge-card h4{margin:18px 0 8px;color:#244f7c;font-size:14px}
+.knowledge-card p,.knowledge-card li{font-size:14px;line-height:1.7;color:#42536a}
+.knowledge-card ul{padding-left:22px;margin:7px 0}
+.formula{background:#f1f7ff;border-left:4px solid var(--blue);padding:13px 16px;border-radius:8px;margin:9px 0;font-family:"Cambria Math","STIX Two Math","Times New Roman",serif;font-size:18px;font-weight:600;line-height:1.65;letter-spacing:.15px;color:#173c64;overflow-wrap:anywhere}.formula sub{font-size:.72em;vertical-align:sub}.formula sup{font-size:.72em;vertical-align:super}
+.knowledge-example{background:#f7fafc;border:1px solid var(--line);padding:12px 14px;border-radius:10px;margin-top:10px;font-size:13px;line-height:1.6}
+.knowledge-card .tag{display:inline-block;background:#eaf4ff;color:#2764a5;border-radius:20px;padding:4px 9px;font-size:11px;font-weight:700;margin-bottom:9px}
+@media(max-width:720px){.knowledge-tools{grid-template-columns:1fr}.knowledge-topics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.knowledge-topics button{font-size:12px}}
+@media print{.sidebar,.topbar,.page-head button,.notice{display:none!important}.app{display:block}.content{padding:0}.page{display:none!important}#page-knowledge{display:block!important}.knowledge-card{box-shadow:none}}
+\n@media(max-width:1050px){.app{grid-template-columns:210px 1fr}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.two-col{grid-template-columns:1fr}.rubric-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:720px){.app{grid-template-columns:1fr}.sidebar{display:none}.topbar{height:66px;padding:0 16px}.content{padding:20px 14px}.page-head{flex-direction:column}.topbar .crumb{display:none}.mobile-menu{display:inline-block}.stats{gap:10px}.card{padding:15px}.form-grid{grid-template-columns:1fr}.rubric-grid{grid-template-columns:1fr}.score-options{grid-template-columns:repeat(2,minmax(0,1fr))}.user span{display:none}.stat-value{font-size:24px}}
+
+/* ===== VISUAL REFRESH: modern, clean education dashboard ===== */
+:root{--navy:#102a43;--blue:#2563eb;--cyan:#eff6ff;--bg:#f3f6fb;--text:#172b4d;--muted:#6b7c93;--line:#e3eaf3;--green:#15966a;--amber:#b7791f;--red:#d14343;--white:#fff}
+body{background:radial-gradient(ellipse at 12% 0%,#e8f1ff 0,transparent 34%),var(--bg);font-family:Inter,"Segoe UI",Arial,sans-serif;letter-spacing:.05px}
+.app{grid-template-columns:258px minmax(0,1fr)}
+.sidebar{background:linear-gradient(165deg,#102a43 0%,#173f66 55%,#1e4b78 100%);padding:25px 17px;box-shadow:8px 0 28px #17324d12;position:relative;z-index:2}
+.brand{padding:5px 8px 21px}.logo{width:46px;height:46px;border-radius:15px;background:linear-gradient(145deg,#fff,#dcecff);color:#1d4ed8;box-shadow:0 6px 16px #061a3028}
+.brand h1{font-size:18px;letter-spacing:-.4px}.brand p{color:#c6d8ec}
+.nav{display:flex;flex-direction:column;gap:4px}.nav-label{margin:12px 0 4px;color:#9fb8d2;font-weight:750}
+.nav button{border:1px solid transparent;border-radius:12px;padding:12px 13px;color:#d8e6f5;transition:background .18s,border-color .18s,transform .18s}
+.nav button:hover{background:#ffffff18;border-color:#ffffff16;transform:translateX(2px)}
+.nav button.active{background:linear-gradient(90deg,#ffffff25,#ffffff12);border-color:#ffffff24;color:#fff;box-shadow:inset 3px 0 #8fc5ff}
+.side-note{background:#ffffff10;border-color:#ffffff24;border-radius:15px}
+.main{min-width:0}.topbar{height:78px;background:#ffffffed;backdrop-filter:blur(14px);border-bottom:1px solid #e5ebf3;padding:0 clamp(18px,3vw,38px);position:sticky;top:0;z-index:5}
+.topbar .crumb{color:#7b8ba1;font-weight:600}.topbar strong{font-size:19px;letter-spacing:-.35px;color:#17324d}
+.avatar{background:linear-gradient(145deg,#dbeafe,#bfdbfe);color:#1d4ed8;box-shadow:0 0 0 4px #eff6ff}
+.content{padding:32px clamp(18px,3vw,38px);max-width:1600px}
+.page-head{margin-bottom:26px;align-items:center}.page-head h2{font-size:27px;letter-spacing:-.8px;color:#132f4c}.page-head p{max-width:760px;color:#718198}
+button{border-radius:11px;transition:transform .16s,box-shadow .16s,background .16s}button:hover{filter:brightness(.985)}button:active{transform:translateY(1px)}.primary{background:linear-gradient(135deg,#2d72e8,#2159c7);box-shadow:0 5px 12px #2563eb25}.primary:hover{box-shadow:0 7px 17px #2563eb35}.secondary{background:#edf3fa;color:#244564;border:1px solid #e1e9f2}.danger{border:1px solid #ffe0e0}
+.card,.knowledge-card{border:1px solid #e5ebf3;border-radius:18px;background:#fff;box-shadow:0 5px 20px #193b5b08;transition:box-shadow .2s,transform .2s}.card:hover{box-shadow:0 9px 26px #193b5b10}.card-title h3{color:#1c3552;letter-spacing:-.2px}
+.stat-icon{border-radius:13px;background:linear-gradient(145deg,#eff6ff,#e2edff);color:#2563eb}.stat-value{color:#163653;font-size:31px}.stat-foot{color:#8291a5}
+.pill{border:1px solid #e8edf3}.pill.blue{background:#eff6ff;color:#245fc2;border-color:#dbeafe}.pill.green{background:#eaf8f1;border-color:#d5f1e2}.pill.amber{background:#fff8e8;border-color:#f8e8bd}
+.table-wrap{border-color:#e5ebf3;border-radius:14px}th{background:#f6f8fc;color:#60738a}td,th{padding:14px 15px}tbody tr:hover{background:#f7faff}
+.field input,.field select,.field textarea,input.search{border-color:#d8e1ed;border-radius:11px;transition:border-color .15s,box-shadow .15s}.field input:focus,.field select:focus,.field textarea:focus,input.search:focus{border-color:#7eaff4;box-shadow:0 0 0 3px #dbeafe}
+.tabs button{border:1px solid #e1e9f2}.tabs button.active{background:#173f66;box-shadow:0 4px 10px #173f6622}
+.criteria,.level{border-color:#e5ebf3;border-radius:14px}.score-options label{border-radius:11px}.score-options label:has(input:checked){background:#eff6ff;border-color:#6da5f3}
+.notice{border:1px solid #f3dfaa;border-radius:13px}.toast{border:1px solid #ffffff20;box-shadow:0 12px 35px #102a4340}
+.knowledge-tools{grid-template-columns:250px minmax(0,1fr);gap:19px}.knowledge-topics{gap:8px}.knowledge-topics button{border-radius:12px;border-color:#e4eaf2;padding:12px 13px;line-height:1.45;box-shadow:0 2px 7px #193b5b05}.knowledge-topics button:hover{border-color:#b8d2f4;background:#f7faff}.knowledge-topics button.active{background:linear-gradient(100deg,#eaf3ff,#f5f9ff);border-color:#9dc2f2;color:#174b83;box-shadow:inset 3px 0 #3478d4}
+.knowledge-card{padding:25px;margin-bottom:17px}.knowledge-card h3{font-size:20px;letter-spacing:-.3px;color:#163b60}.knowledge-card h4{color:#245b8c}.knowledge-card p,.knowledge-card li{color:#4c6078}.knowledge-card .tag{background:#edf5ff;color:#2863a8}
+.formula{background:linear-gradient(100deg,#f0f7ff,#f8fbff);border-left-color:#3b82d0;border-radius:10px;color:#173f66}
+.progress{background:#edf2f8}.progress span{background:linear-gradient(90deg,#60a5fa,#2563eb)}
+@media(max-width:1050px){.app{grid-template-columns:220px minmax(0,1fr)}}
+@media(max-width:720px){.sidebar{box-shadow:none}.topbar{backdrop-filter:none}.content{padding:22px 14px}.page-head h2{font-size:24px}.knowledge-card{padding:18px}}
+
+
+/* ===== COMPLETE REDESIGN: PhysAssess Studio ===== */
+:root{
+ --navy:#14213d;--blue:#087f8c;--cyan:#e6f4f3;--bg:#f5f6f2;--text:#202b36;--muted:#71808c;--line:#e4e9e5;
+ --green:#19856b;--amber:#b7791f;--red:#c44d58;--white:#fff;
+ --ink:#14213d;--teal:#087f8c;--mint:#dff2ec;--surface:#fff;--shadow:0 12px 32px rgba(26,48,55,.065)
+}
+*{box-sizing:border-box}
+body{background:#f5f6f2;color:#202b36;font-family:Inter,"Segoe UI",Arial,sans-serif;letter-spacing:0}
+.app{grid-template-columns:274px minmax(0,1fr);min-height:100vh;background:#f5f6f2}
+.sidebar{background:#14213d;color:#edf5f4;padding:27px 18px 20px;gap:22px;box-shadow:12px 0 35px rgba(20,33,61,.10);position:relative;z-index:8}
+.brand{border:0;padding:4px 8px 24px;gap:13px}
+.logo{width:48px;height:48px;border-radius:16px;background:#dff2ec;color:#087f8c;font-size:22px;box-shadow:0 8px 22px #07162955}
+.brand h1{font-size:19px;font-weight:800;letter-spacing:-.6px;color:#fff}
+.brand p{color:#a9bdc9;font-size:11px;letter-spacing:.25px}
+.nav-label{color:#7892a4;font-size:10px;letter-spacing:1.5px;font-weight:800;padding:0 12px;margin-top:4px}
+.nav{display:flex;flex-direction:column;gap:6px}
+.nav button{width:100%;border:1px solid transparent;border-radius:13px;background:transparent;color:#bdcbd4;padding:13px 14px;gap:13px;font-size:13px;font-weight:600;transition:all .18s;text-align:left}
+.nav .ico{width:23px;height:23px;display:grid;place-items:center;border-radius:8px;background:#ffffff0c;font-size:15px}
+.nav button:hover{background:#ffffff0d;color:white;transform:translateX(3px)}
+.nav button.active{background:#087f8c;color:white;border-color:#29a0a2;box-shadow:0 8px 18px #06172c55}
+.nav button.active .ico{background:#ffffff24}
+.side-note{border:1px solid #ffffff1a;background:#ffffff0a;border-radius:15px;color:#aebfc9;padding:15px;font-size:11px;line-height:1.7}
+.side-note b{color:#e8f5f2;font-size:12px}
+.main{min-width:0}
+.topbar{height:86px;background:#fff;border:0;border-bottom:1px solid #e8ece8;padding:0 clamp(22px,4vw,54px);position:sticky;top:0;z-index:6;box-shadow:0 3px 15px #14213d06}
+.topbar .crumb{font-size:11px;color:#8a979d;font-weight:600;letter-spacing:.3px}
+.topbar strong{font-size:20px;color:#14213d;font-weight:800;letter-spacing:-.5px;margin-top:5px}
+.user{gap:12px;color:#53636d;font-weight:600;font-size:12px}
+.avatar{width:39px;height:39px;border-radius:13px;background:#dff2ec;color:#087f8c;box-shadow:none;font-size:13px}
+.content{max-width:1680px;padding:36px clamp(22px,4vw,54px);margin:0 auto}
+.page-head{align-items:center;margin-bottom:29px}
+.page-head h2{font-size:29px;font-weight:800;letter-spacing:-1px;color:#14213d;margin-bottom:8px}
+.page-head p{font-size:13px;color:#78858c;line-height:1.7}
+button{border-radius:12px;font-size:12px;font-weight:700;transition:all .18s ease}
+button:hover{filter:none;transform:translateY(-1px)}
+button:active{transform:translateY(0)}
+.primary{background:#087f8c;color:#fff;box-shadow:0 7px 16px #087f8c25}
+.primary:hover{background:#066d78;box-shadow:0 9px 20px #087f8c35}
+.secondary{background:#edf3f1;color:#31535a;border:1px solid #e0e9e5}
+.danger{background:#fff0f0;color:#bd4650;border:1px solid #f8dede}
+.grid{gap:18px}
+.card,.knowledge-card{background:#fff;border:1px solid #e8ece8;border-radius:19px;box-shadow:var(--shadow);padding:22px;transition:box-shadow .2s,border-color .2s}
+.card:hover{box-shadow:0 16px 36px rgba(26,48,55,.09);border-color:#dbe6e1}
+.stats{gap:15px;margin-bottom:22px}
+.stat-top{color:#7b898e;font-size:12px;font-weight:650}
+.stat-icon{width:41px;height:41px;border-radius:14px;background:#e6f4f3;color:#087f8c;font-size:17px}
+.stat-value{font-size:33px;color:#14213d;font-weight:850;letter-spacing:-1.2px;margin:17px 0 4px}
+.stat-foot{font-size:11px;color:#94a09f}
+.two-col{gap:18px}
+.card-title{margin-bottom:19px}
+.card-title h3{font-size:15px;font-weight:800;color:#203747;letter-spacing:-.2px}
+.card-title p{color:#8a9699;font-size:11px}
+.pill{border:1px solid #e7ece9;background:#f3f6f4;color:#64736f;font-size:10px;padding:5px 9px}
+.pill.green{background:#e7f5ee;color:#19856b;border-color:#d5eee2}
+.pill.amber{background:#fff5df;color:#a66e17;border-color:#f4e7c7}
+.pill.blue{background:#e7f3f4;color:#087f8c;border-color:#d5eaea}
+.progress{height:8px;background:#edf1ee;border-radius:20px}
+.progress span{background:linear-gradient(90deg,#35aaa0,#087f8c);border-radius:20px}
+.phase-icon{background:#e6f4f3;color:#087f8c;border-radius:12px}
+.phase strong,.task-row strong{color:#30434d;font-size:12px}
+.phase small,.task-row small{color:#8a9699;font-size:11px}
+.table-wrap{border:1px solid #e7ece9;border-radius:15px;background:#fff}
+table{font-size:12px}
+th{background:#f5f8f6;color:#7a8988;font-size:10px;letter-spacing:.7px;font-weight:800}
+td,th{padding:14px 15px;border-bottom:1px solid #edf0ed}
+tbody tr:hover{background:#f7fbf9}
+.field label{font-size:11px;color:#53656a;font-weight:750}
+.field input,.field select,.field textarea,input.search{border:1px solid #dfe7e2;background:#fbfcfb;border-radius:11px;padding:12px 13px;font-size:12px;color:#273a42}
+.field input:focus,.field select:focus,.field textarea:focus,input.search:focus{outline:0;border-color:#55aaa6;box-shadow:0 0 0 3px #dff2ec}
+.field textarea{line-height:1.6}
+.form-grid{gap:16px}
+.form-actions{margin-top:22px}
+.tabs{gap:7px}
+.tabs button{background:#eef3f0;color:#60716d;border:1px solid #e4ebe6;border-radius:10px}
+.tabs button.active{background:#14213d;color:#fff;border-color:#14213d;box-shadow:0 5px 13px #14213d20}
+.criteria,.level{border:1px solid #e5ebe7;border-radius:15px;background:#fff}
+.criteria{padding:18px}
+.criteria-head strong{color:#2a4149;font-size:13px}
+.criteria-head small{color:#899693;font-size:11px}
+.score-options label{border:1px solid #e2e9e4;border-radius:11px;background:#fbfcfb;color:#52635f;padding:11px;font-size:11px}
+.score-options label:has(input:checked){background:#e7f4f1;border-color:#55aaa6;color:#075f66}
+.score-options input{accent-color:#087f8c}
+.rubric-grid{gap:12px}
+.level{background:#f9fbfa;padding:14px}
+.level b{color:#35535a;font-size:11px}
+.level p{color:#73827e;font-size:11px;line-height:1.6}
+.chart-bars{border-color:#e5ebe7}
+.bar{background:linear-gradient(180deg,#55b9ad,#087f8c);border-radius:8px 8px 0 0}
+.bar-label{color:#82918d;font-size:10px}
+.notice{background:#fff8e8;border:1px solid #f3e6c7;color:#8b671f;border-radius:13px;font-size:12px}
+.empty{color:#91a09a;font-size:12px}
+.toast{background:#14213d;border:1px solid #ffffff1c;border-radius:13px;box-shadow:0 15px 40px #14213d35;font-size:12px}
+.knowledge-tools{grid-template-columns:260px minmax(0,1fr);gap:20px}
+.knowledge-topics{gap:8px}
+.knowledge-topics button{background:#fff;border:1px solid #e7ece8;border-radius:12px;color:#52645f;padding:12px 13px;font-size:11px;font-weight:650;box-shadow:0 3px 10px #14213d05}
+.knowledge-topics button:hover{background:#f5faf8;border-color:#a8d2c9}
+.knowledge-topics button.active{background:#e5f3ef;border-color:#8fc8ba;color:#086a68;box-shadow:inset 3px 0 #087f8c}
+.knowledge-card{padding:27px;margin-bottom:18px}
+.knowledge-card h3{color:#142f40;font-size:20px;letter-spacing:-.45px}
+.knowledge-card h4{color:#087f8c;font-size:14px}
+.knowledge-card h5{color:#426f70}
+.knowledge-card p,.knowledge-card li{color:#53666a;font-size:13px;line-height:1.8}
+.knowledge-card .tag{background:#e5f3ef;color:#087b78;border-radius:7px;font-size:10px;letter-spacing:.4px}
+.formula{background:#eef7f4;border-left:4px solid #087f8c;border-radius:9px;color:#174b4e;font-size:18px}
+.knowledge-example{background:#f7faf8;border:1px solid #e5ece7;border-radius:12px;color:#53666a;font-size:12px}
+.footer-note{color:#8a9691;font-size:11px}
+.mobile-menu{display:none}
+@media(max-width:1050px){.app{grid-template-columns:230px minmax(0,1fr)}.content{padding:28px 24px}}
+@media(max-width:720px){.app{grid-template-columns:1fr}.sidebar{display:none}.topbar{height:72px;padding:0 15px}.mobile-menu{display:inline-block}.content{padding:22px 14px}.page-head{align-items:flex-start}.page-head h2{font-size:24px}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.card{padding:16px}.knowledge-tools{grid-template-columns:1fr}.knowledge-topics{position:static;max-height:230px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));overflow:auto}.knowledge-card{padding:18px}.user span{display:none}}
+@media print{.sidebar,.topbar{display:none!important}.app{display:block}.content{padding:0}.page{display:none!important}#page-knowledge{display:block!important}.knowledge-card{box-shadow:none;border:0}}
+
+
+.evidence-upload{border:1px solid var(--line);border-radius:14px;padding:14px;background:#fbfdfd;margin:8px 0 16px}
+.evidence-upload-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:12px;flex-wrap:wrap}
+.evidence-upload-head strong{display:block;font-size:13px;color:var(--text)}.evidence-upload-head small{display:block;color:var(--muted);font-size:12px;line-height:1.5;margin-top:4px}
+.upload-drop{min-height:112px;border:1.5px dashed #9bbfc0;border-radius:12px;background:#f2f9f8;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;cursor:pointer;text-align:center;padding:14px;color:var(--blue)}
+.upload-drop:hover{background:#eaf5f3;border-color:var(--blue)}.upload-drop b{font-size:13px}.upload-drop small,.upload-message{font-size:11px;color:var(--muted)}.upload-symbol{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:#d9eeeb;font-size:22px;font-weight:400}
+.upload-message{margin:9px 2px}.evidence-gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:9px;margin-top:10px}
+.evidence-thumb{position:relative;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff}.evidence-thumb img{width:100%;height:105px;object-fit:cover;display:block}.evidence-thumb small{display:block;padding:6px;font-size:10px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.evidence-thumb button{position:absolute;right:5px;top:5px;width:25px;height:25px;padding:0;border-radius:50%;background:#14213ddd;color:white;font-size:16px;line-height:25px}
+@media(max-width:520px){.evidence-upload-head{display:block}.evidence-upload-head .pill{margin-top:8px}}
+
+</style>
+<style>#page-practice .quiz-question{border:1px solid var(--line);border-radius:14px;padding:16px;margin:14px 0;background:#fff}#page-practice .quiz-question h4{font-size:14px;line-height:1.6;margin:0 0 12px;color:#203747}#page-practice .quiz-options{display:grid;gap:8px}#page-practice .quiz-option{display:flex;gap:10px;align-items:flex-start;padding:10px 12px;border:1px solid #e2e9e4;border-radius:10px;font-size:13px;line-height:1.5;cursor:pointer}#page-practice .quiz-option:has(input:checked){background:#e7f4f1;border-color:#55aaa6}#page-practice .quiz-option input{margin-top:3px;accent-color:#087f8c}#page-practice .quiz-short textarea{width:100%;min-height:84px;border:1px solid var(--line);border-radius:10px;padding:11px;font:13px/1.6 inherit}#page-practice .quiz-answer{background:#f2f8f5;border-left:4px solid #19856b;padding:12px;border-radius:9px;margin-top:9px;font-size:13px;line-height:1.6}#page-practice .result-score{font-size:34px;font-weight:850;color:#087f8c}#page-practice .result-detail{padding:12px;border:1px solid var(--line);border-radius:11px;margin:9px 0;font-size:13px;line-height:1.55}@media(max-width:720px){#page-practice .quiz-question{padding:12px}}</style></head>
+<body>
+<div class="app">
+<aside class="sidebar">
+<div class="brand"><div class="logo">P</div><div><h1>PhysAssess</h1><p>Đánh giá năng lực Vật lý 10</p></div></div>
+<div class="nav-label">Không gian làm việc</div>
+<nav class="nav" id="nav">
+<button class="active" data-page="dashboard"><span class="ico">▦</span>Tổng quan</button>
+<button data-page="classes"><span class="ico">♙</span>Lớp học &amp; học sinh</button>
+<button data-page="rubrics"><span class="ico">☷</span>Rubric đánh giá</button>
+<button data-page="assess"><span class="ico">✓</span>Đánh giá trực tiếp</button>
+<button data-page="reports"><span class="ico">▥</span>Báo cáo kết quả</button>
+<button data-page="feedback"><span class="ico">✎</span>Phản hồi học tập</button>
+<button data-page="knowledge"><span class="ico">📘</span>Sổ tay kiến thức</button>
+<button data-page="practice"><span class="ico">✎</span> Luyện tập &amp; kiểm tra</button></nav>
+<div class="side-note"><b>Phiên bản thử nghiệm</b><br/>Website mẫu chạy ngay trên trình duyệt. Dữ liệu được lưu trên thiết bị này; chưa đồng bộ giữa các thành viên.</div>
+</aside>
+<main class="main">
+<header class="topbar"><div><div class="crumb">Không gian giáo viên / <span id="crumb">Tổng quan</span></div><strong id="topTitle">Tổng quan</strong></div><div class="user"><button class="secondary small mobile-menu" onclick="toggleMobileNav()">☰ Menu</button><div class="avatar">GV</div><span>Giáo viên Vật lý</span></div></header>
+<div class="content">
+<section class="page" id="page-dashboard">
+<div class="page-head"><div><h2>Chào mừng trở lại! 👋</h2><p>Theo dõi quá trình đánh giá và sự tiến bộ của học sinh trong hoạt động học tập Vật lý.</p></div><div class="actions"><button class="secondary" onclick="navigate('rubrics')">＋ Tạo rubric</button><button class="primary" onclick="navigate('assess')">✓ Đánh giá học sinh</button></div></div>
+<div class="grid stats">
+<div class="card"><div class="stat-top"><span>Lớp học</span><span class="stat-icon">♙</span></div><div class="stat-value" id="statClasses">2</div><div class="stat-foot">Lớp đang quản lý</div></div>
+<div class="card"><div class="stat-top"><span>Học sinh</span><span class="stat-icon">♧</span></div><div class="stat-value" id="statStudents">8</div><div class="stat-foot">Trong danh sách hiện tại</div></div>
+<div class="card"><div class="stat-top"><span>Lượt đánh giá</span><span class="stat-icon">✓</span></div><div class="stat-value" id="statAssessments">3</div><div class="stat-foot">Đã lưu trên trình duyệt</div></div>
+<div class="card"><div class="stat-top"><span>Điểm trung bình</span><span class="stat-icon">↗</span></div><div class="stat-value" id="statAverage">3,1/4</div><div class="stat-foot">Theo các lượt đánh giá đã lưu</div></div>
+</div>
+<div class="grid two-col">
+<div class="card"><div class="card-title"><div><h3>Tiến độ đánh giá</h3><p>Tình hình hoàn thành theo các bước chính</p></div><span class="pill blue">MVP</span></div>
+<div class="phase"><div class="phase-icon">☷</div><div><strong>Thiết kế rubric</strong><small id="dashRubricText">Rubric sẵn sàng để sử dụng</small></div><span class="pill green" id="dashRubricCount">1 mẫu</span></div>
+<div class="phase"><div class="phase-icon">✓</div><div><strong>Đánh giá học sinh</strong><small>Ghi nhận mức độ đạt theo từng tiêu chí</small></div><span class="pill blue" id="dashAssessmentCount">3 lượt</span></div>
+<div class="phase"><div class="phase-icon">▥</div><div><strong>Tổng hợp kết quả</strong><small>Điểm số được tổng hợp từ dữ liệu đã lưu</small></div><span class="pill amber">Tự động</span></div>
+<div class="phase"><div class="phase-icon">✎</div><div><strong>Phản hồi học tập</strong><small>Giáo viên rà soát trước khi gửi học sinh</small></div><span class="pill">Chờ duyệt</span></div>
+</div>
+<div class="card"><div class="card-title"><div><h3>Kết quả theo tiêu chí</h3><p>Điểm trung bình trên thang 4</p></div></div><div class="chart-bars" id="dashboardChart"></div><div class="footer-note">Dữ liệu minh họa sẽ thay đổi khi bạn thêm hoặc sửa lượt đánh giá.</div></div>
+</div>
+<div class="card" style="margin-top:16px"><div class="card-title"><div><h3>Đánh giá gần đây</h3><p>Các lượt đánh giá mới nhất</p></div><button class="secondary small" onclick="navigate('reports')">Xem báo cáo →</button></div><div id="recentTable"></div></div>
+</section>
+<section class="page hidden" id="page-classes">
+<div class="page-head"><div><h2>Lớp học &amp; học sinh</h2><p>Quản lý danh sách lớp và học sinh dùng trong các hoạt động đánh giá.</p></div><button class="primary" onclick="openClassForm()">＋ Thêm học sinh</button></div>
+<div class="card">
+<div class="card-title"><div><h3>Danh sách học sinh</h3><p id="studentCountLabel">Dữ liệu hiện tại</p></div><input class="search" id="studentSearch" oninput="renderClasses()" placeholder="Tìm tên học sinh..." style="max-width:240px"/></div>
+<div class="actions" style="margin-bottom:14px;align-items:center">
+<select id="classFilter" onchange="renderClasses()" style="padding:9px 12px;border:1px solid var(--line);border-radius:9px"><option value="all">Tất cả lớp</option></select>
+<button class="primary small" onclick="document.getElementById('excelImport').click()">⬆ Nhập danh sách Excel</button>
+<input accept=".xlsx,.xls,.csv,text/csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel" class="hidden" id="excelImport" onchange="importStudentsFile(event)" type="file"/>
+<button class="secondary small" onclick="downloadStudentTemplate()">↓ Tải Excel mẫu</button>
+<button class="secondary small" onclick="exportStudentsExcel()">Xuất Excel</button>
+<button class="secondary small" onclick="exportStudents()">Xuất CSV</button>
+</div>
+<div class="notice" style="margin:0 0 14px">Nhập Excel: hệ thống bỏ qua dòng đầu tiên. Từ dòng 2 trở đi, cột A là <b>Tên học sinh</b>, cột B là <b>Lớp</b>. Có thể xem trước dữ liệu và xác nhận trước khi nhập.</div>
+<div class="card hidden" id="excelPreviewPanel" style="margin:0 0 16px;border:1px solid var(--line)">
+<div class="card-title"><div><h3>Xem trước danh sách Excel</h3><p id="excelPreviewSummary">Kiểm tra dữ liệu trước khi nhập</p></div><button class="secondary small" onclick="cancelExcelImport()" type="button">Hủy</button></div>
+<div id="excelPreviewTable"></div>
+<div class="form-actions"><button class="secondary" onclick="cancelExcelImport()" type="button">Hủy nhập</button><button class="primary" onclick="confirmExcelImport()" type="button">✓ Xác nhận nhập học sinh</button></div>
+</div>
+<div id="studentsTable"></div>
+</div>
+<div class="card hidden" id="classForm" style="margin-top:16px"><div class="card-title"><h3 id="classFormTitle">Thêm học sinh</h3><button class="secondary small" onclick="closeClassForm()">Đóng</button></div>
+<form id="studentForm" onsubmit="saveStudent(event)"><input id="studentId" type="hidden"/><div class="form-grid">
+<div class="field"><label>Họ và tên</label><input id="studentName" placeholder="Ví dụ: Nguyễn Minh Anh" required=""/></div>
+<div class="field"><label>Lớp</label><input id="studentClass" list="classOptions" placeholder="Ví dụ: 10A1" required=""/><datalist id="classOptions"></datalist></div>
+</div><div class="form-actions"><button class="secondary" onclick="closeClassForm()" type="button">Hủy</button><button class="primary" type="submit">Lưu học sinh</button></div></form></div>
+</section>
+<section class="page hidden" id="page-rubrics">
+<div class="page-head"><div><h2>Trợ lý thiết kế rubric</h2><p>Tạo bộ tiêu chí và mô tả mức độ biểu hiện dựa trên năng lực, bài học và nhiệm vụ thực tế.</p></div><button class="primary" onclick="generateRubricWithAI()">✦ Tạo Rubric bằng AI</button></div>
+<div class="notice">AI sẽ phân tích thông tin bài học hoặc giáo án tải lên để đề xuất tiêu chí và 4 mức độ biểu hiện. Giáo viên cần rà soát, chỉnh sửa trước khi sử dụng. API key được giữ ở máy chủ, không đặt trong trình duyệt.</div>
+<div class="card" style="margin-bottom:16px">
+<div class="card-title"><div><h3>1. Thông tin thiết kế</h3><p>Cung cấp bối cảnh để hệ thống đề xuất rubric</p></div><span class="pill blue">Bước 1/3</span></div>
+<div class="form-grid">
+<div class="field"><label>Tên rubric</label><input id="rubricName" placeholder="Ví dụ: Khảo sát chuyển động thẳng" value="Khảo sát chuyển động của vật"/></div>
+<div class="field"><label>Chủ đề / bài học Vật lý</label><input id="rubricTopic" placeholder="Ví dụ: Tốc độ và vận tốc" value="Chuyển động của vật"/></div>
+<div class="field"><label>Năng lực trọng tâm</label><select id="rubricCompetency"><option value="investigate">Tìm hiểu thế giới tự nhiên dưới góc độ vật lý</option><option value="apply">Vận dụng kiến thức, kỹ năng đã học</option><option value="cognitive">Nhận thức vật lý</option><option value="experiment">Thực hành thí nghiệm và xử lý số liệu</option><option value="collaborate">Giao tiếp và hợp tác trong học tập vật lý</option></select></div>
+<div class="field"><label>Hình thức thực hiện</label><select id="rubricMode"><option value="experiment">Thí nghiệm / thực hành</option><option value="problem">Giải quyết vấn đề thực tiễn</option><option value="project">Dự án học tập / sản phẩm nhóm</option><option value="simulation">Thí nghiệm mô phỏng</option><option value="discussion">Thảo luận / báo cáo</option></select></div>
+</div>
+<div class="field" style="margin-top:14px"><label>Mô tả nhiệm vụ học tập</label><textarea id="rubricTask" placeholder="Học sinh cần làm gì? Tạo ra sản phẩm gì?">Học sinh thu thập dữ liệu chuyển động, xử lý kết quả, biểu diễn dữ liệu và giải thích hiện tượng bằng kiến thức vật lý.</textarea></div>
+<div class="field"><label>Minh chứng có thể quan sát (không bắt buộc)</label><input id="rubricEvidence" placeholder="Ví dụ: bảng số liệu, đồ thị, báo cáo, video thao tác..."/></div>
+<div class="field"><label>Tải kế hoạch bài dạy (PDF hoặc DOCX, không bắt buộc)</label><input accept=".pdf,.docx,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document" id="rubricFile" type="file"/><small class="muted">Tối đa 15 MB. PDF có hình ảnh/sơ đồ sẽ được gửi để AI phân tích; DOCX được trích xuất nội dung văn bản.</small></div>
+<div class="actions"><button class="primary" id="aiRubricBtn" onclick="generateRubricWithAI()">✦ Phân tích và tạo Rubric bằng AI</button><button class="secondary" onclick="generateRubric()">Tạo theo mẫu có sẵn</button><button class="secondary" onclick="resetRubricForm()">Khôi phục mẫu</button></div>
+<div class="muted" id="aiRubricStatus" role="status" style="margin-top:12px;font-size:13px"></div>
+</div>
+<div class="card" style="margin-bottom:16px">
+<div class="card-title"><div><h3>2. Tiêu chí đánh giá đề xuất</h3><p>Giáo viên có thể thêm, sửa hoặc xóa tiêu chí trước khi lưu</p></div><span class="pill" id="rubricSub">4 tiêu chí · 4 mức độ</span></div>
+<div id="rubricList"></div>
+<button class="secondary" onclick="addRubricCriterion()">＋ Thêm tiêu chí</button>
+</div>
+<div class="card">
+<div class="card-title"><div><h3>3. Kiểm tra và lưu rubric</h3><p>Điều chỉnh mô tả 4 mức độ cho từng tiêu chí</p></div><span class="pill green">Thang điểm 1–4</span></div>
+<div id="rubricEditor"></div>
+<div class="form-actions"><button class="secondary" onclick="previewRubric()">Xem trước</button><button class="primary" onclick="saveRubric()">Lưu rubric và áp dụng</button></div>
+<div class="hidden" id="rubricPreview" style="margin-top:18px"></div>
+</div>
+</section>
+<section class="page hidden" id="page-assess">
+<div class="page-head"><div><h2>Đánh giá trực tiếp</h2><p>Chọn học sinh, đánh dấu mức độ theo từng tiêu chí và lưu minh chứng học tập.</p></div></div>
+<div class="card">
+<form id="assessmentForm" onsubmit="saveAssessment(event)">
+<div class="form-grid">
+<div class="field"><label>Học sinh</label><select id="assessStudent" required=""></select></div>
+<div class="field"><label>Nhiệm vụ / rubric</label><select id="assessRubric" required=""></select></div>
+</div>
+<div class="field" style="margin-top:14px"><label>Tiêu chí và mức độ biểu hiện</label><div id="assessmentCriteria"></div></div>
+<div class="form-grid"><div class="field"><label>Minh chứng quan sát</label><textarea id="evidence" placeholder="Ví dụ: Học sinh ghi đủ 5 lần đo, đơn vị rõ ràng..."></textarea></div><div class="field"><label>Ghi chú của giáo viên</label><textarea id="teacherNote" placeholder="Điểm mạnh, khó khăn, điều cần hỗ trợ..."></textarea></div></div>
+<div class="form-actions"><button class="secondary" onclick="setTimeout(renderAssessmentCriteria,0)" type="reset">Làm mới lựa chọn</button><button class="primary" type="submit">Lưu lượt đánh giá</button></div>
+</form>
+</div>
+</section>
+<section class="page hidden" id="page-reports">
+<div class="page-head"><div><h2>Báo cáo kết quả</h2><p>Xem điểm trung bình, so sánh tiêu chí và theo dõi kết quả từng học sinh.</p></div><div class="actions"><button class="secondary" onclick="exportAssessments()">Xuất báo cáo CSV</button><button class="primary" onclick="window.print()">In báo cáo</button></div></div>
+<div class="grid stats">
+<div class="card"><div class="stat-top"><span>Số lượt đánh giá</span><span class="stat-icon">✓</span></div><div class="stat-value" id="reportCount">0</div></div>
+<div class="card"><div class="stat-top"><span>Điểm trung bình</span><span class="stat-icon">↗</span></div><div class="stat-value" id="reportAvg">—</div></div>
+<div class="card"><div class="stat-top"><span>Mức cao nhất</span><span class="stat-icon">★</span></div><div class="stat-value" id="reportHigh">—</div></div>
+<div class="card"><div class="stat-top"><span>Cần hỗ trợ</span><span class="stat-icon">!</span></div><div class="stat-value" id="reportSupport">0</div></div>
+</div>
+<div class="grid two-col"><div class="card"><div class="card-title"><div><h3>Điểm theo tiêu chí</h3><p>Trung bình các lượt đã lưu, thang 4</p></div></div><div class="chart-bars" id="reportChart"></div></div><div class="card"><div class="card-title"><div><h3>Điểm theo học sinh</h3><p>Điểm trung bình của từng học sinh</p></div></div><div id="studentReport"></div></div></div>
+<div class="card" style="margin-top:16px"><div class="card-title"><h3>Lịch sử đánh giá</h3></div><div id="assessmentHistory"></div></div>
+</section>
+<section class="page hidden" id="page-feedback">
+<div class="page-head"><div><h2>Phản hồi học tập</h2><p>Tạo gợi ý phản hồi dựa trên kết quả và minh chứng; giáo viên kiểm tra trước khi gửi.</p></div></div>
+<div class="notice">Các nhận xét được tạo bằng quy tắc đơn giản từ điểm rubric, không phải kết luận tự động về năng lực. Giáo viên cần rà soát và chỉnh sửa trước khi sử dụng.</div>
+<div class="grid two-col"><div class="card"><div class="card-title"><div><h3>Chọn lượt đánh giá</h3><p>Chọn dữ liệu đã lưu để tạo phản hồi</p></div></div><div class="field"><label>Lượt đánh giá</label><select id="feedbackSelect" onchange="generateFeedback()"></select></div><div class="field"><label>Minh chứng mô tả</label><textarea id="feedbackEvidence" readonly=""></textarea></div>
+<div class="evidence-upload"><div class="evidence-upload-head"><div><strong>📷 Nộp minh chứng bằng hình ảnh</strong><small>Tải ảnh bài làm, sản phẩm thí nghiệm, bảng số liệu hoặc đồ thị của học sinh.</small></div><span class="pill blue">JPG · PNG · WEBP</span></div>
+<label class="upload-drop" for="feedbackImageInput"><span class="upload-symbol">＋</span><b>Chọn ảnh từ thiết bị</b><small>Có thể chọn nhiều ảnh cùng lúc · tối đa 8 MB/ảnh</small></label>
+<input accept="image/*" hidden="" id="feedbackImageInput" multiple="" onchange="handleFeedbackImages(event)" type="file"/>
+<div class="upload-message" id="feedbackImageMessage">Ảnh sẽ được lưu cùng lượt đánh giá đang chọn trên trình duyệt này.</div>
+<div class="evidence-gallery" id="feedbackImageGallery"></div></div>
+<button class="primary" onclick="generateFeedback()">Tạo gợi ý nhận xét</button></div>
+<div class="card"><div class="card-title"><div><h3>Phản hồi cho học sinh</h3><p>Chỉnh sửa nội dung trước khi duyệt</p></div><span class="pill amber" id="feedbackStatus">Chưa duyệt</span></div><div class="field"><label>Nhận xét</label><textarea id="feedbackText" placeholder="Gợi ý phản hồi sẽ xuất hiện tại đây..." style="min-height:220px"></textarea></div><div class="form-actions"><button class="secondary" onclick="copyFeedback()">Sao chép</button><button class="primary" onclick="approveFeedback()">✓ Xác nhận đã duyệt</button></div></div></div>
+</section>
+<section class="page hidden" id="page-knowledge">
+<div class="page-head"><div><h2>Sổ tay kiến thức – Chương Động học</h2><p>Tổng hợp đầy đủ kiến thức, khái niệm, công thức, bảng so sánh, ví dụ và phương pháp giải bài tập theo tài liệu Word đã biên soạn.</p></div>
+<button class="secondary" onclick="printKnowledge()">⎙ In sổ tay</button></div>
+<div class="notice">Nội dung được chia thành các chủ đề. Bạn có thể chọn chủ đề ở danh sách bên trái hoặc tìm kiếm từ khóa, công thức ở ô tìm kiếm.</div>
+<div class="knowledge-tools">
+<div>
+<input class="search" id="knowledgeSearch" oninput="filterKnowledge()" placeholder="Tìm kiếm kiến thức, công thức..."/>
+<div class="knowledge-topics" id="knowledgeTopics"><button onclick="showKnowledgeSection(1)" type="button">1. KHÁI QUÁT CHƯƠNG ĐỘNG HỌC</button><button onclick="showKnowledgeSection(2)" type="button">2. BÀI 4. ĐỘ DỊCH CHUYỂN VÀ QUÃNG ĐƯỜNG ĐI ĐƯỢC</button><button onclick="showKnowledgeSection(3)" type="button">3. BÀI 5. TỐC ĐỘ VÀ VẬN TỐC</button><button onclick="showKnowledgeSection(4)" type="button">4. BÀI 6. THỰC HÀNH: ĐO TỐC ĐỘ CỦA VẬT CHUYỂN ĐỘNG</button><button onclick="showKnowledgeSection(5)" type="button">5. BÀI 7. ĐỒ THỊ ĐỘ DỊCH CHUYỂN – THỜI GIAN</button><button onclick="showKnowledgeSection(6)" type="button">6. BÀI 8. CHUYỂN ĐỘNG THẲNG BIẾN ĐỔI. GIA TỐC</button><button onclick="showKnowledgeSection(7)" type="button">7. BÀI 9. CHUYỂN ĐỘNG THẲNG BIẾN ĐỔI ĐỀU</button><button onclick="showKnowledgeSection(8)" type="button">8. BÀI 10. SỰ RƠI TỰ DO</button><button onclick="showKnowledgeSection(9)" type="button">9. BÀI 11. THỰC HÀNH: ĐO GIA TỐC RƠI TỰ DO</button><button onclick="showKnowledgeSection(10)" type="button">10. BÀI 12. CHUYỂN ĐỘNG NÉM</button><button onclick="showKnowledgeSection(11)" type="button">11. BẢNG TỔNG HỢP CÔNG THỨC CHƯƠNG ĐỘNG HỌC</button><button onclick="showKnowledgeSection(12)" type="button">12. PHƯƠNG PHÁP GIẢI BÀI TẬP VÀ LỖI THƯỜNG GẶP</button><button onclick="showKnowledgeSection(13)" type="button">TÀI LIỆU CƠ SỞ</button></div>
+</div>
+<div id="knowledgeContent"><article class="card knowledge-card knowledge-section" data-search="1. khái quát chương động học" id="knowledge-section-1"><span class="tag">CHƯƠNG ĐỘNG HỌC</span><h3>1. KHÁI QUÁT CHƯƠNG ĐỘNG HỌC</h3><p>Động học là phần cơ học mô tả chuyển động của vật mà chưa xét nguyên nhân gây ra chuyển động. Khi nghiên cứu một chuyển động, cần xác định vật được chọn để khảo sát, mốc và hệ tọa độ, thời điểm bắt đầu, các đại lượng mô tả chuyển động và cách biểu diễn bằng bảng hoặc đồ thị.</p><h4>1.1. Các đại lượng cơ bản</h4><div class="table-wrap knowledge-table"><table><tbody><tr><th>Đại lượng</th><th>Ý nghĩa</th><th>Kí hiệu – đơn vị thường dùng</th></tr><tr><td>Thời gian</td><td>Khoảng thời gian chuyển động hoặc thời điểm khảo sát</td><td>t, Δt; giây (s)</td></tr><tr><td>Tọa độ/vị trí</td><td>Vị trí của vật trong hệ tọa độ đã chọn</td><td>x; mét (m)</td></tr><tr><td>Quãng đường</td><td>Độ dài quỹ đạo vật đã đi được</td><td>s; mét (m)</td></tr><tr><td>Độ dịch chuyển</td><td>Độ biến thiên vị trí, có hướng</td><td>Δx hoặc vectơ độ dịch chuyển; m</td></tr><tr><td>Tốc độ</td><td>Mức độ nhanh/chậm của chuyển động</td><td>v; m/s, km/h</td></tr><tr><td>Vận tốc</td><td>Mức độ thay đổi vị trí theo thời gian, có hướng</td><td>v hoặc vectơ v; m/s</td></tr><tr><td>Gia tốc</td><td>Mức độ biến thiên vận tốc theo thời gian</td><td>a; m/s²</td></tr></tbody></table></div><h4>1.2. Đổi đơn vị cần nhớ</h4><div class="table-wrap knowledge-table"><table><tbody><tr><th>1 km = 1 000 m     ;     1 h = 3 600 s</th></tr></tbody></table></div><div class="table-wrap knowledge-table"><table><tbody><tr><th>1 m/s = 3,6 km/h     ;     1 km/h = 1/3,6 m/s</th></tr></tbody></table></div><p>Khi thay số vào công thức, phải thống nhất đơn vị. Nếu quãng đường tính bằng mét và thời gian tính bằng giây thì tốc độ có đơn vị m/s.</p><h4>1.3. Quy trình mô tả một chuyển động</h4><p class="knowledge-list-item">• Chọn vật làm mốc và hệ quy chiếu phù hợp.</p><p class="knowledge-list-item">• Chọn gốc tọa độ, trục tọa độ và chiều dương.</p><p class="knowledge-list-item">• Xác định vị trí ban đầu, thời gian khảo sát và các dữ kiện đã biết.</p><p class="knowledge-list-item">• Phân biệt đại lượng vô hướng (quãng đường, tốc độ) với đại lượng có hướng (độ dịch chuyển, vận tốc, gia tốc).</p><p class="knowledge-list-item">• Chọn công thức hoặc đồ thị phù hợp với loại chuyển động.</p></article><article class="card knowledge-card knowledge-section" data-search="2. bài 4. độ dịch chuyển và quãng đường đi được" id="knowledge-section-2"><span class="tag">CHƯƠNG ĐỘNG HỌC</span><h3>2. BÀI 4. ĐỘ DỊCH CHUYỂN VÀ QUÃNG ĐƯỜNG ĐI ĐƯỢC</h3><h4>2.1. Vị trí của vật</h4><p>Muốn xác định vị trí của một vật, ta cần chọn vật làm mốc và hệ tọa độ. Trong chuyển động thẳng, vị trí thường được biểu diễn bằng tọa độ x trên một trục. Tọa độ có thể dương, âm hoặc bằng 0 tùy theo vị trí của vật so với gốc tọa độ.</p><h4>2.2. Độ dịch chuyển</h4><p>Độ dịch chuyển cho biết sự thay đổi vị trí của vật từ vị trí đầu đến vị trí cuối. Đây là đại lượng vectơ: có độ lớn, phương và chiều. Với chuyển động thẳng trên trục Ox, độ dịch chuyển được xác định bằng hiệu tọa độ cuối và tọa độ đầu.</p><div class="table-wrap knowledge-table"><table><tbody><tr><th>Δx = x₂ − x₁ / x₁: tọa độ ban đầu; x₂: tọa độ cuối; Δx: độ dịch chuyển.</th></tr></tbody></table></div><p class="knowledge-list-item">• Nếu Δx &gt; 0: vật dịch chuyển theo chiều dương đã chọn.</p><p class="knowledge-list-item">• Nếu Δx &lt; 0: vật dịch chuyển theo chiều âm.</p><p class="knowledge-list-item">• Nếu Δx = 0: vật trở về vị trí ban đầu hoặc vị trí đầu trùng vị trí cuối.</p><h4>2.3. Quãng đường đi được</h4><p>Quãng đường là độ dài phần quỹ đạo mà vật đã đi qua. Quãng đường là đại lượng vô hướng, không âm; nó phụ thuộc toàn bộ đường đi, kể cả khi vật đổi chiều.</p><h4>2.4. Phân biệt quãng đường và độ dịch chuyển</h4><div class="table-wrap knowledge-table"><table><tbody><tr><th>Tiêu chí</th><th>Quãng đường</th><th>Độ dịch chuyển</th></tr><tr><td>Bản chất</td><td>Đại lượng vô hướng</td><td>Đại lượng vectơ</td></tr><tr><td>Cho biết</td><td>Độ dài đường đi</td><td>Sự thay đổi vị trí</td></tr><tr><td>Giá trị</td><td>Không âm</td><td>Có thể dương, âm hoặc bằng 0 trên trục</td></tr><tr><td>Phụ thuộc</td><td>Toàn bộ quỹ đạo</td><td>Vị trí đầu và vị trí cuối</td></tr><tr><td>Quan hệ</td><td>s ≥ |Δx|</td><td>Độ lớn không vượt quá quãng đường</td></tr></tbody></table></div><div class="table-wrap knowledge-table"><table><tbody><tr><th>s ≥ |Δx| / Dấu bằng xảy ra khi vật chuyển động thẳng và không đổi chiều.</th></tr></tbody></table></div><p>Ví dụ 1. Vật đi từ x₁ = 2 m đến x₂ = 8 m:</p><p>Độ dịch chuyển: Δx = 8 − 2 = +6 m.</p><p>Nếu vật đi thẳng, không đổi chiều thì quãng đường s = 6 m.</p><p>Ví dụ 2. Vật đi từ x = 2 m đến x = 8 m rồi quay về x = 5 m:</p><p>Quãng đường: s = (8 − 2) + (8 − 5) = 9 m.</p><p>Độ dịch chuyển cả hành trình: Δx = 5 − 2 = +3 m.</p><p>Nhận xét: quãng đường là 9 m, còn độ lớn độ dịch chuyển là 3 m.</p><h4>2.5. Cách làm dạng bài</h4><p class="knowledge-list-item">• Vẽ trục tọa độ, ghi rõ chiều dương.</p><p class="knowledge-list-item">• Xác định tọa độ đầu và cuối để tính Δx = x₂ − x₁.</p><p class="knowledge-list-item">• Chia hành trình thành từng đoạn để cộng quãng đường.</p><p class="knowledge-list-item">• Không lấy quãng đường làm độ dịch chuyển khi vật có đổi chiều.</p></article><article class="card knowledge-card knowledge-section" data-search="3. bài 5. tốc độ và vận tốc" id="knowledge-section-3"><span class="tag">CHƯƠNG ĐỘNG HỌC</span><h3>3. BÀI 5. TỐC ĐỘ VÀ VẬN TỐC</h3><h4>3.1. Tốc độ trung bình</h4><p>Tốc độ trung bình cho biết trung bình mỗi đơn vị thời gian vật đi được bao nhiêu quãng đường. Tốc độ là đại lượng vô hướng, không thể hiện hướng chuyển động.</p><div class="table-wrap knowledge-table"><table><tbody><tr><th>v_tb = s / Δt / s: tổng quãng đường đi được; Δt: khoảng thời gian thực hiện quãng đường.</th></tr></tbody></table></div><p class="knowledge-list-item">• Đơn vị SI: m/s.</p><p class="knowledge-list-item">• Có thể dùng km/h nếu dữ kiện được biểu diễn theo km và h.</p><p class="knowledge-list-item">• Khi tính trên cả hành trình, phải lấy tổng quãng đường chia tổng thời gian, không tự ý lấy trung bình cộng các tốc độ ở từng chặng nếu thời gian các chặng khác nhau.</p><p>Ví dụ. Một người đi được 150 m trong 30 s:</p><p>v_tb = 150/30 = 5 m/s.</p><h4>3.2. Tốc độ tức thời</h4><p>Tốc độ tức thời cho biết mức độ nhanh hay chậm của vật tại một thời điểm. Trên xe cơ giới, đồng hồ tốc độ thể hiện tốc độ tức thời (theo cách đo của thiết bị). Tốc độ tức thời không cho biết vật đang chuyển động theo hướng nào.</p><h4>3.3. Vận tốc trung bình</h4><p>Vận tốc trung bình được xác định bằng độ dịch chuyển trong khoảng thời gian xét chia cho khoảng thời gian đó. Vì độ dịch chuyển có hướng nên vận tốc là đại lượng vectơ.</p><div class="table-wrap knowledge-table"><table><tbody><tr><th>v⃗_tb = Δd⃗ / Δt / Trong chuyển động thẳng: v_tb = Δx/Δt.</th></tr></tbody></table></div><p class="knowledge-list-item">• Dấu của vận tốc trên trục thẳng cho biết chiều chuyển động theo quy ước chiều dương.</p><p class="knowledge-list-item">• Độ lớn vận tốc trung bình không nhất thiết bằng tốc độ trung bình.</p><h4>3.4. Vận tốc tức thời</h4><p>Vận tốc tức thời là vận tốc tại một thời điểm xác định. Nó cho biết cả mức độ nhanh/chậm và hướng chuyển động tại thời điểm đó. Trong chuyển động thẳng, dấu của vận tốc biểu thị chiều chuyển động.</p><h4>3.5. Tổng hợp vận tốc</h4><p>Khi mô tả chuyển động trong các hệ quy chiếu khác nhau, vận tốc của vật có thể được tổng hợp theo quy tắc cộng vectơ. Với các vận tốc cùng phương, cần xét chiều:</p><div class="table-wrap knowledge-table"><table><tbody><tr><th>Cùng chiều: v = v₁ + v₂</th></tr></tbody></table></div><div class="table-wrap knowledge-table"><table><tbody><tr><th>Ngược chiều: độ lớn vận tốc tương đối = |v₁ − v₂|</th></tr></tbody></table></div><p>Khi các vectơ vận tốc vuông góc, độ lớn vận tốc tổng hợp được tính theo định lí Pythagore; hướng được xác định theo quy tắc cộng vectơ.</p><div class="table-wrap knowledge-table"><table><tbody><tr><th>|v⃗| = √(v₁² + v₂²) / Áp dụng khi hai vectơ thành phần vuông góc.</th></tr></tbody></table></div><p>Ví dụ. Một người đi 120 m trong 40 s:</p><p>Tốc độ trung bình: 120/40 = 3 m/s.</p><p>Nếu độ dịch chuyển cũng là 120 m theo chiều dương thì vận tốc trung bình là +3 m/s.</p><p>Nếu người đó đi rồi quay về vị trí ban đầu, độ dịch chuyển bằng 0 nên vận tốc trung bình cả hành trình bằng 0, dù tốc độ trung bình vẫn khác 0.</p><h4>3.6. So sánh nhanh</h4><div class="table-wrap knowledge-table"><table><tbody><tr><th>Đại lượng</th><th>Công thức cơ bản</th><th>Đặc điểm</th></tr><tr><td>Tốc độ trung bình</td><td>v_tb = s/Δt</td><td>Vô hướng; dựa trên quãng đường</td></tr><tr><td>Vận tốc trung bình</td><td>v⃗_tb = Δd⃗/Δt</td><td>Vectơ; dựa trên độ dịch chuyển</td></tr><tr><td>Tốc độ tức thời</td><td>Giá trị tốc độ tại thời điểm xét</td><td>Không cho biết hướng</td></tr><tr><td>Vận tốc tức thời</td><td>Vận tốc tại thời điểm xét</td><td>Có độ lớn và hướng</td></tr></tbody></table></div></article><article class="card knowledge-card knowledge-section" data-search="4. bài 6. thực hành: đo tốc độ của vật chuyển động" id="knowledge-section-4"><span class="tag">CHƯƠNG ĐỘNG HỌC</span><h3>4. BÀI 6. THỰC HÀNH: ĐO TỐC ĐỘ CỦA VẬT CHUYỂN ĐỘNG</h3><h4>4.1. Mục đích và nguyên tắc</h4><p>Mục đích của bài thực hành là đo tốc độ chuyển động của vật bằng cách xác định quãng đường vật đi được và thời gian tương ứng. Từ các số liệu đo, tính tốc độ trung bình.</p><div class="table-wrap knowledge-table"><table><tbody><tr><th>v_tb = s / t</th></tr></tbody></table></div><h4>4.2. Dụng cụ và cách đo</h4><p>SGK giới thiệu việc sử dụng đồng hồ đo thời gian hiện số kết hợp cổng quang điện hoặc thiết bị đo thời gian phù hợp; có thể dùng đồng hồ cần rung trong phương án thực hành tương ứng. Cần đọc hướng dẫn sử dụng của đúng thiết bị được trang bị.</p><h4>4.3. Quy trình khái quát</h4><p class="knowledge-list-item">• Lắp đặt dụng cụ theo sơ đồ thí nghiệm; kiểm tra nguồn điện, dây nối và vị trí cảm biến.</p><p class="knowledge-list-item">• Xác định quãng đường s mà vật sẽ chuyển động hoặc khoảng cách giữa các vị trí đo.</p><p class="knowledge-list-item">• Kiểm tra chế độ đo, đưa đồng hồ về trạng thái sẵn sàng.</p><p class="knowledge-list-item">• Cho vật chuyển động và ghi thời gian tương ứng với quãng đường đã chọn.</p><p class="knowledge-list-item">• Lặp lại phép đo nhiều lần trong cùng điều kiện.</p><p class="knowledge-list-item">• Tính tốc độ từng lần đo và giá trị trung bình; ghi kết quả kèm đơn vị.</p><h4>4.4. Bảng ghi kết quả gợi ý</h4><div class="table-wrap knowledge-table"><table><tbody><tr><th>Lần đo</th><th>Quãng đường s (m)</th><th>Thời gian t (s)</th><th>Tốc độ v = s/t (m/s)</th></tr><tr><td>1</td><td>…</td><td>…</td><td>…</td></tr><tr><td>2</td><td>…</td><td>…</td><td>…</td></tr><tr><td>3</td><td>…</td><td>…</td><td>…</td></tr><tr><td>Giá trị TB</td><td>…</td><td>…</td><td>…</td></tr></tbody></table></div><h4>4.5. Sai số và lưu ý</h4><p class="knowledge-list-item">• Đặt vật và cảm biến đúng vị trí; cố định dụng cụ để tránh xê dịch.</p><p class="knowledge-list-item">• Kiểm tra đồng hồ đã được đặt về trạng thái ban đầu trước mỗi lần đo.</p><p class="knowledge-list-item">• Đảm bảo vật đi qua đúng vùng đo; tránh vật bị cản hoặc va chạm.</p><p class="knowledge-list-item">• Lặp lại phép đo để hạn chế ảnh hưởng của sai số ngẫu nhiên.</p><p class="knowledge-list-item">• Ghi số liệu trung thực, đúng độ chia nhỏ nhất và đơn vị của dụng cụ.</p><p>Các nguồn sai số có thể gồm: độ phân giải của dụng cụ, thao tác bắt đầu/dừng đo, căn chỉnh thiết bị, ma sát hoặc điều kiện chuyển động không ổn định.</p></article><article class="card knowledge-card knowledge-section" data-search="5. bài 7. đồ thị độ dịch chuyển – thời gian" id="knowledge-section-5"><span class="tag">CHƯƠNG ĐỘNG HỌC</span><h3>5. BÀI 7. ĐỒ THỊ ĐỘ DỊCH CHUYỂN – THỜI GIAN</h3><h4>5.1. Ý nghĩa và cách xây dựng</h4><p>Đồ thị độ dịch chuyển – thời gian biểu diễn sự thay đổi độ dịch chuyển của vật theo thời gian. Trục ngang biểu diễn thời gian t; trục đứng biểu diễn độ dịch chuyển d (hoặc tọa độ x theo cách biểu diễn của bài). Mỗi điểm trên đồ thị ứng với một thời điểm và giá trị độ dịch chuyển tương ứng.</p><p class="knowledge-list-item">• Lập bảng các cặp giá trị thời gian và độ dịch chuyển.</p><p class="knowledge-list-item">• Chọn tỉ lệ thích hợp cho hai trục.</p><p class="knowledge-list-item">• Biểu diễn các điểm thực nghiệm hoặc điểm tính toán.</p><p class="knowledge-list-item">• Nối các điểm theo đặc điểm chuyển động và đọc đồ thị.</p><h4>5.2. Đọc đồ thị</h4><p class="knowledge-list-item">• Đọc tung độ để xác định độ dịch chuyển tại một thời điểm.</p><p class="knowledge-list-item">• Đường nằm ngang: độ dịch chuyển không đổi, vật đứng yên trong khoảng thời gian đó.</p><p class="knowledge-list-item">• Đường thẳng nghiêng: vận tốc không đổi trong khoảng thời gian xét.</p><p class="knowledge-list-item">• Đường có độ dốc dương: vận tốc dương; độ dốc âm: vận tốc âm.</p><p class="knowledge-list-item">• Độ dốc càng lớn về độ lớn thì độ lớn vận tốc càng lớn.</p><h4>5.3. Xác định vận tốc từ đồ thị</h4><div class="table-wrap knowledge-table"><table><tbody><tr><th>v = Δd / Δt = (d₂ − d₁)/(t₂ − t₁) / Vận tốc bằng độ dốc của đồ thị độ dịch chuyển – thời gian.</th></tr></tbody></table></div><p>Ví dụ. Đồ thị đi qua A(2 s; 4 m) và B(5 s; 13 m):</p><p>Δd = 13 − 4 = 9 m; Δt = 5 − 2 = 3 s.</p><p>v = 9/3 = 3 m/s.</p><h4>5.4. Chú ý khi xử lí đồ thị</h4><p class="knowledge-list-item">• Phải đọc đúng đơn vị và tỉ lệ trên từng trục.</p><p class="knowledge-list-item">• Chọn hai điểm rõ ràng trên đoạn thẳng để tính độ dốc; không nhất thiết phải chọn hai điểm dữ liệu ban đầu.</p><p class="knowledge-list-item">• Nếu đồ thị gồm nhiều đoạn có độ dốc khác nhau, tính vận tốc riêng cho từng giai đoạn.</p><p class="knowledge-list-item">• Độ dịch chuyển là đại lượng có dấu; không thay bằng quãng đường nếu vật đổi chiều.</p></article><article class="card knowledge-card knowledge-section" data-search="6. bài 8. chuyển động thẳng biến đổi. gia tốc" id="knowledge-section-6"><span class="tag">CHƯƠNG ĐỘNG HỌC</span><h3>6. BÀI 8. CHUYỂN ĐỘNG THẲNG BIẾN ĐỔI. GIA TỐC</h3><h4>6.1. Chuyển động thẳng biến đổi</h4><p>Chuyển động thẳng biến đổi là chuyển động trên đường thẳng mà vận tốc thay đổi theo thời gian. Vật có thể nhanh dần hoặc chậm dần tùy sự thay đổi độ lớn vận tốc.</p><h4>6.2. Gia tốc</h4><p>Gia tốc là đại lượng vectơ đặc trưng cho sự thay đổi vận tốc theo thời gian. Gia tốc trung bình được xác định bằng độ biến thiên vận tốc chia cho khoảng thời gian xảy ra sự biến thiên đó.</p><div class="table-wrap knowledge-table"><table><tbody><tr><th>a⃗_tb = Δv⃗ / Δt</th></tr></tbody></table></div><div class="table-wrap knowledge-table"><table><tbody><tr><th>Trong chuyển động thẳng: a_tb = (v₂ − v₁)/(t₂ − t₁) / Đơn vị SI: m/s².</th></tr></tbody></table></div><h4>6.3. Ý nghĩa dấu của gia tốc</h4><p>Trên một trục tọa độ, vận tốc và gia tốc mang dấu theo chiều dương đã chọn. Không thể kết luận nhanh dần hay chậm dần chỉ dựa vào dấu của gia tốc; cần so sánh chiều của vận tốc và gia tốc.</p><div class="table-wrap knowledge-table"><table><tbody><tr><th>Quan hệ giữa v và a</th><th>Tình trạng độ lớn vận tốc</th></tr><tr><td>Cùng dấu (cùng chiều)</td><td>Độ lớn vận tốc tăng – nhanh dần</td></tr><tr><td>Trái dấu (ngược chiều)</td><td>Độ lớn vận tốc giảm – chậm dần</td></tr></tbody></table></div><p>Quy tắc trên áp dụng cho chuyển động thẳng trong khoảng thời gian mà chiều của vận tốc không đổi.</p><p>Ví dụ. Vật chuyển động theo chiều dương, vận tốc tăng từ 4 m/s lên 10 m/s trong 3 s:</p><p>a = (10 − 4)/3 = 2 m/s².</p><p>Gia tốc dương, cùng dấu với vận tốc nên vật nhanh dần.</p><p>Ví dụ. Vật có vận tốc v = +8 m/s và gia tốc a = −2 m/s²:</p><p>Vận tốc và gia tốc trái dấu nên độ lớn vận tốc đang giảm; vật chậm dần trong giai đoạn xét.</p></article><article class="card knowledge-card knowledge-section" data-search="7. bài 9. chuyển động thẳng biến đổi đều" id="knowledge-section-7"><span class="tag">CHƯƠNG ĐỘNG HỌC</span><h3>7. BÀI 9. CHUYỂN ĐỘNG THẲNG BIẾN ĐỔI ĐỀU</h3><h4>7.1. Định nghĩa và đặc điểm</h4><p>Chuyển động thẳng biến đổi đều là chuyển động thẳng có gia tốc không đổi theo thời gian. Vận tốc biến thiên đều theo thời gian; đồ thị vận tốc – thời gian là đường thẳng.</p><h4>7.2. Các phương trình cơ bản</h4><div class="table-wrap knowledge-table"><table><tbody><tr><th>v = v₀ + at / Phương trình vận tốc – thời gian.</th></tr></tbody></table></div><div class="table-wrap knowledge-table"><table><tbody><tr><th>d = v₀t + ½at² / Độ dịch chuyển tính từ thời điểm ban đầu, với t = 0 tại lúc bắt đầu xét.</th></tr></tbody></table></div><div class="table-wrap knowledge-table"><table><tbody><tr><th>v² − v₀² = 2ad / Hệ thức độc lập với thời gian.</th></tr></tbody></table></div><p>Trong đó: v₀ là vận tốc tại thời điểm bắt đầu xét; v là vận tốc sau thời gian t; a là gia tốc không đổi; d là độ dịch chuyển trong thời gian t. Các đại lượng có dấu theo trục tọa độ đã chọn.</p><h4>7.3. Chuyển động nhanh dần đều và chậm dần đều</h4><p class="knowledge-list-item">• Nhanh dần đều: độ lớn vận tốc tăng đều theo thời gian; vận tốc và gia tốc cùng chiều.</p><p class="knowledge-list-item">• Chậm dần đều: độ lớn vận tốc giảm đều theo thời gian; vận tốc và gia tốc ngược chiều.</p><h4>7.4. Đồ thị vận tốc – thời gian</h4><p>Với gia tốc không đổi, đồ thị v–t là đường thẳng có độ dốc bằng gia tốc. Diện tích đại số phần hình giới hạn bởi đồ thị và trục thời gian biểu thị độ dịch chuyển trong khoảng thời gian xét.</p><div class="table-wrap knowledge-table"><table><tbody><tr><th>a = Δv/Δt  (độ dốc đồ thị v–t)</th></tr></tbody></table></div><div class="table-wrap knowledge-table"><table><tbody><tr><th>d = diện tích đại số dưới đồ thị v–t</th></tr></tbody></table></div><h4>7.5. Cách lựa chọn công thức</h4><div class="table-wrap knowledge-table"><table><tbody><tr><th>Dữ kiện/đại lượng cần tìm</th><th>Công thức phù hợp</th></tr><tr><td>Biết v₀, a, t; tìm v</td><td>v = v₀ + at</td></tr><tr><td>Biết v₀, a, t; tìm d</td><td>d = v₀t + ½at²</td></tr><tr><td>Không có thời gian; biết v₀, v, a; tìm d</td><td>v² − v₀² = 2ad</td></tr><tr><td>Tìm gia tốc từ hai vận tốc và thời gian</td><td>a = (v − v₀)/t</td></tr></tbody></table></div><p>Ví dụ. Vật bắt đầu chuyển động từ nghỉ, gia tốc a = 2 m/s² trong 3 s:</p><p>v₀ = 0; v = 0 + 2·3 = 6 m/s.</p><p>d = 0·3 + ½·2·3² = 9 m.</p><h4>7.6. Lưu ý dấu và điều kiện</h4><p class="knowledge-list-item">• Chọn chiều dương trước khi gán dấu cho v₀, v và a.</p><p class="knowledge-list-item">• Không lấy độ lớn thay cho đại lượng có dấu khi bài toán cần độ dịch chuyển.</p><p class="knowledge-list-item">• Nếu vật đổi chiều, cần xác định thời điểm v = 0 để chia giai đoạn chuyển động.</p><p class="knowledge-list-item">• Các phương trình trên áp dụng khi gia tốc không đổi và chuyển động được xét trên một trục thẳng.</p></article><article class="card knowledge-card knowledge-section" data-search="8. bài 10. sự rơi tự do" id="knowledge-section-8"><span class="tag">CHƯƠNG ĐỘNG HỌC</span><h3>8. BÀI 10. SỰ RƠI TỰ DO</h3><h4>8.1. Khái niệm</h4><p>Rơi tự do là sự rơi của vật chỉ dưới tác dụng của trọng lực, khi có thể bỏ qua lực cản không khí. Gần mặt đất, gia tốc rơi tự do có phương thẳng đứng, chiều hướng xuống dưới.</p><h4>8.2. Đặc điểm</h4><p class="knowledge-list-item">• Quỹ đạo rơi tự do là đường thẳng đứng.</p><p class="knowledge-list-item">• Gia tốc rơi tự do gần mặt đất có độ lớn gần như không đổi tại một địa điểm.</p><p class="knowledge-list-item">• Giá trị thường dùng trong bài tập: g ≈ 9,8 m/s² hoặc lấy g ≈ 10 m/s² theo yêu cầu đề.</p><p class="knowledge-list-item">• Nếu thả vật không vận tốc đầu, vận tốc ban đầu v₀ = 0.</p><h4>8.3. Công thức rơi tự do</h4><p>Chọn chiều dương hướng xuống và mốc thời gian tại lúc thả vật. Khi vật được thả không vận tốc đầu:</p><div class="table-wrap knowledge-table"><table><tbody><tr><th>v = gt</th></tr></tbody></table></div><div class="table-wrap knowledge-table"><table><tbody><tr><th>h = ½gt²</th></tr></tbody></table></div><div class="table-wrap knowledge-table"><table><tbody><tr><th>v² = 2gh</th></tr></tbody></table></div><p>Trong đó h là quãng đường/độ dịch chuyển theo phương thẳng đứng tính từ vị trí thả; t là thời gian rơi; g là gia tốc rơi tự do.</p><h4>8.4. Phân biệt rơi tự do với rơi trong không khí</h4><p>Trong thực tế, vật thường chịu lực cản không khí. Hình dạng, diện tích tiếp xúc và tốc độ có thể làm lực cản khác nhau. Vì vậy, hai vật có khối lượng khác nhau không nhất thiết rơi như nhau trong không khí. Kết luận về sự rơi như nhau được xét trong mô hình bỏ qua lực cản.</p><p>Ví dụ. Thả vật từ nghỉ, lấy g = 10 m/s², sau 2 s:</p><p>h = ½·10·2² = 20 m.</p><p>v = 10·2 = 20 m/s.</p><h4>8.5. Dạng bài thường gặp</h4><p class="knowledge-list-item">• Biết t, tìm h và v: dùng h = ½gt², v = gt.</p><p class="knowledge-list-item">• Biết h, tìm t: t = √(2h/g).</p><p class="knowledge-list-item">• Biết h, tìm tốc độ khi chạm đất: v = √(2gh).</p><p class="knowledge-list-item">• Kiểm tra đơn vị: h tính bằng mét, t bằng giây, g bằng m/s².</p></article><article class="card knowledge-card knowledge-section" data-search="9. bài 11. thực hành: đo gia tốc rơi tự do" id="knowledge-section-9"><span class="tag">CHƯƠNG ĐỘNG HỌC</span><h3>9. BÀI 11. THỰC HÀNH: ĐO GIA TỐC RƠI TỰ DO</h3><h4>9.1. Cơ sở lí thuyết</h4><p>Thực hành dựa trên chuyển động rơi tự do của vật được thả không vận tốc đầu. Đo độ cao rơi h và thời gian rơi t, sau đó xác định gia tốc rơi tự do.</p><div class="table-wrap knowledge-table"><table><tbody><tr><th>h = ½gt²  ⇒  g = 2h/t²</th></tr></tbody></table></div><h4>9.2. Quy trình thực hành khái quát</h4><p class="knowledge-list-item">• Lắp dụng cụ đo theo hướng dẫn và kiểm tra cơ cấu nhả vật, cảm biến hoặc đồng hồ.</p><p class="knowledge-list-item">• Đo và ghi độ cao rơi h từ vị trí thả đến vị trí xác định thời điểm kết thúc.</p><p class="knowledge-list-item">• Đặt vật ở vị trí ban đầu, bảo đảm vật được thả không có vận tốc đẩy đáng kể.</p><p class="knowledge-list-item">• Tiến hành thả vật, đo thời gian rơi t.</p><p class="knowledge-list-item">• Lặp lại nhiều lần với cùng độ cao hoặc các độ cao khác nhau theo yêu cầu thí nghiệm.</p><p class="knowledge-list-item">• Tính g cho từng lần đo và xác định giá trị đại diện; so sánh với giá trị tham khảo.</p><h4>9.3. Bảng số liệu gợi ý</h4><div class="table-wrap knowledge-table"><table><tbody><tr><th>Lần đo</th><th>Độ cao h (m)</th><th>Thời gian t (s)</th><th>g = 2h/t² (m/s²)</th></tr><tr><td>1</td><td>…</td><td>…</td><td>…</td></tr><tr><td>2</td><td>…</td><td>…</td><td>…</td></tr><tr><td>3</td><td>…</td><td>…</td><td>…</td></tr><tr><td>Giá trị trung bình</td><td></td><td></td><td>…</td></tr></tbody></table></div><h4>9.4. Nguồn sai số và biện pháp hạn chế</h4><p class="knowledge-list-item">• Sai số đo độ cao: xác định chưa đúng điểm đầu hoặc điểm cuối; đọc thước chưa chính xác.</p><p class="knowledge-list-item">• Sai số đo thời gian: độ trễ của cảm biến, cơ cấu nhả vật hoặc thiết bị ghi thời gian.</p><p class="knowledge-list-item">• Vật bị đẩy khi thả, chuyển động lệch phương thẳng đứng hoặc va chạm.</p><p class="knowledge-list-item">• Cần cố định thiết bị, kiểm tra kết nối, lặp lại phép đo và ghi số liệu khách quan.</p><p>Không nên tự ý so sánh một kết quả đơn lẻ với g chuẩn để kết luận thiết bị sai; cần xét sai số của phép đo và điều kiện thí nghiệm.</p></article><article class="card knowledge-card knowledge-section" data-search="10. bài 12. chuyển động ném" id="knowledge-section-10"><span class="tag">CHƯƠNG ĐỘNG HỌC</span><h3>10. BÀI 12. CHUYỂN ĐỘNG NÉM</h3><h4>10.1. Phân tích chuyển động ném</h4><p>Chuyển động ném có thể được phân tích thành các chuyển động thành phần theo hai phương vuông góc. Khi bỏ qua lực cản không khí, theo phương ngang vật chuyển động thẳng đều; theo phương thẳng đứng vật chuyển động biến đổi đều dưới tác dụng của trọng lực.</p><h4>10.2. Ném ngang</h4><p>Ném ngang là trường hợp vật được truyền vận tốc ban đầu theo phương ngang từ một độ cao so với mặt đất. Chọn trục Ox nằm ngang theo chiều ném, Oy thẳng đứng hướng xuống, gốc tọa độ tại vị trí ném và mốc thời gian lúc ném.</p><h4>10.3. Chuyển động theo từng phương</h4><div class="table-wrap knowledge-table"><table><tbody><tr><th>Phương ngang Ox</th><th>Phương thẳng đứng Oy</th></tr><tr><td>Không có gia tốc theo phương ngang (bỏ qua cản): aₓ = 0</td><td>Gia tốc aᵧ = g hướng xuống</td></tr><tr><td>Vận tốc ngang không đổi: vₓ = v₀</td><td>Vận tốc đứng: vᵧ = gt</td></tr><tr><td>Tọa độ: x = v₀t</td><td>Độ dịch chuyển đứng: y = ½gt²</td></tr></tbody></table></div><div class="table-wrap knowledge-table"><table><tbody><tr><th>x = v₀t</th></tr></tbody></table></div><div class="table-wrap knowledge-table"><table><tbody><tr><th>y = ½gt²</th></tr></tbody></table></div><h4>10.4. Thời gian rơi và tầm xa</h4><p>Nếu vật được ném từ độ cao h, khi chạm mặt phẳng ngang đi qua điểm thấp hơn một khoảng h, thời gian rơi được xác định từ chuyển động theo phương thẳng đứng. Tầm xa là khoảng cách theo phương ngang từ hình chiếu điểm ném đến vị trí vật chạm đất.</p><div class="table-wrap knowledge-table"><table><tbody><tr><th>t = √(2h/g)</th></tr></tbody></table></div><div class="table-wrap knowledge-table"><table><tbody><tr><th>L = v₀t = v₀√(2h/g)</th></tr></tbody></table></div><p>Theo mô hình lí tưởng, thời gian rơi không phụ thuộc vận tốc ném ngang; tầm xa tăng khi vận tốc ném ngang tăng hoặc độ cao ném tăng.</p><h4>10.5. Quỹ đạo</h4><p>Từ x = v₀t suy ra t = x/v₀. Thay vào y = ½gt², ta được phương trình quỹ đạo dạng parabol:</p><div class="table-wrap knowledge-table"><table><tbody><tr><th>y = (g / 2v₀²) x²</th></tr></tbody></table></div><p>Phương trình trên dùng hệ trục đã chọn với Oy hướng xuống, gốc tại điểm ném.</p><p>Ví dụ. Vật được ném ngang với v₀ = 5 m/s từ độ cao h = 20 m, lấy g = 10 m/s²:</p><p>Thời gian rơi: t = √(2·20/10) = 2 s.</p><p>Tầm xa: L = 5·2 = 10 m.</p><p>Vận tốc thành phần khi chạm đất: vₓ = 5 m/s; vᵧ = 10·2 = 20 m/s hướng xuống.</p><p>Độ lớn vận tốc khi chạm đất: v = √(5² + 20²) ≈ 20,6 m/s.</p><h4>10.6. Lưu ý</h4><p class="knowledge-list-item">• Phân tích riêng theo hai phương vuông góc; thời gian t là như nhau ở cả hai phương.</p><p class="knowledge-list-item">• Không nhầm độ cao h với tầm xa L.</p><p class="knowledge-list-item">• Công thức ném ngang ở trên giả sử bỏ qua lực cản không khí và mặt đất nằm ngang.</p><p class="knowledge-list-item">• Nếu chọn trục Oy hướng lên thì dấu của gia tốc và phương trình tọa độ phải đổi cho phù hợp.</p></article><article class="card knowledge-card knowledge-section" data-search="11. bảng tổng hợp công thức chương động học" id="knowledge-section-11"><span class="tag">CHƯƠNG ĐỘNG HỌC</span><h3>11. BẢNG TỔNG HỢP CÔNG THỨC CHƯƠNG ĐỘNG HỌC</h3><div class="table-wrap knowledge-table"><table><tbody><tr><th>Nội dung</th><th>Công thức</th><th>Ghi chú</th></tr><tr><td>Độ dịch chuyển thẳng</td><td>Δx = x₂ − x₁</td><td>Có dấu theo chiều dương</td></tr><tr><td>Tốc độ trung bình</td><td>v_tb = s/Δt</td><td>s là tổng quãng đường</td></tr><tr><td>Vận tốc trung bình</td><td>v_tb = Δx/Δt</td><td>Trong chuyển động thẳng</td></tr><tr><td>Gia tốc trung bình</td><td>a_tb = (v₂ − v₁)/Δt</td><td>m/s²</td></tr><tr><td>Chuyển động biến đổi đều</td><td>v = v₀ + at</td><td>a không đổi</td></tr><tr><td>Độ dịch chuyển biến đổi đều</td><td>d = v₀t + ½at²</td><td>Tính từ thời điểm ban đầu</td></tr><tr><td>Hệ thức không thời gian</td><td>v² − v₀² = 2ad</td><td>Chuyển động thẳng</td></tr><tr><td>Độ dốc đồ thị d–t</td><td>v = Δd/Δt</td><td>Vận tốc</td></tr><tr><td>Độ dốc đồ thị v–t</td><td>a = Δv/Δt</td><td>Gia tốc</td></tr><tr><td>Diện tích đại số dưới v–t</td><td>d = diện tích</td><td>Độ dịch chuyển</td></tr><tr><td>Rơi tự do từ nghỉ</td><td>v = gt; h = ½gt²</td><td>Oy hướng xuống</td></tr><tr><td>Rơi tự do – hệ thức</td><td>v² = 2gh</td><td>Thả không vận tốc đầu</td></tr><tr><td>Ném ngang</td><td>x = v₀t; y = ½gt²</td><td>Oy hướng xuống</td></tr><tr><td>Thời gian ném ngang</td><td>t = √(2h/g)</td><td>Bỏ qua lực cản</td></tr><tr><td>Tầm xa ném ngang</td><td>L = v₀√(2h/g)</td><td>Mặt đất ngang</td></tr></tbody></table></div></article><article class="card knowledge-card knowledge-section" data-search="12. phương pháp giải bài tập và lỗi thường gặp" id="knowledge-section-12"><span class="tag">CHƯƠNG ĐỘNG HỌC</span><h3>12. PHƯƠNG PHÁP GIẢI BÀI TẬP VÀ LỖI THƯỜNG GẶP</h3><h4>12.1. Quy trình giải bài tập</h4><p class="knowledge-list-item">• Đọc kĩ đề, xác định vật chuyển động và giai đoạn đang xét.</p><p class="knowledge-list-item">• Tóm tắt dữ kiện, đổi tất cả về hệ đơn vị thống nhất.</p><p class="knowledge-list-item">• Chọn hệ tọa độ, gốc tọa độ, chiều dương và mốc thời gian.</p><p class="knowledge-list-item">• Xác định loại chuyển động: thẳng đều, biến đổi đều, rơi tự do hay ném.</p><p class="knowledge-list-item">• Chọn công thức đúng với dữ kiện và đại lượng cần tìm.</p><p class="knowledge-list-item">• Thay số có kèm đơn vị; kiểm tra dấu, độ lớn và tính hợp lí của kết quả.</p><p class="knowledge-list-item">• Viết kết luận rõ ràng, nêu chiều nếu đại lượng có hướng.</p><h4>12.2. Những nhầm lẫn cần tránh</h4><div class="table-wrap knowledge-table"><table><tbody><tr><th>Nhầm lẫn</th><th>Cách khắc phục</th></tr><tr><td>Đồng nhất quãng đường với độ dịch chuyển</td><td>Xét vị trí đầu – cuối và toàn bộ đường đi; vật đổi chiều thì hai đại lượng thường khác nhau.</td></tr><tr><td>Đồng nhất tốc độ với vận tốc</td><td>Tốc độ vô hướng; vận tốc có hướng.</td></tr><tr><td>Lấy trung bình cộng các tốc độ tùy ý</td><td>Dùng tổng quãng đường chia tổng thời gian.</td></tr><tr><td>Quên dấu của vận tốc/gia tốc</td><td>Chọn chiều dương trước và giữ nhất quán.</td></tr><tr><td>Nói gia tốc âm luôn là chậm dần</td><td>So sánh dấu của v và a.</td></tr><tr><td>Dùng công thức biến đổi đều cho mọi chuyển động</td><td>Chỉ dùng khi gia tốc không đổi.</td></tr><tr><td>Nhầm độ dốc đồ thị d–t và v–t</td><td>Độ dốc d–t là vận tốc; độ dốc v–t là gia tốc.</td></tr><tr><td>Nhầm diện tích dưới đồ thị d–t là quãng đường</td><td>Diện tích đại số dưới đồ thị v–t mới cho độ dịch chuyển.</td></tr><tr><td>Dùng công thức rơi tự do khi lực cản đáng kể</td><td>Kiểm tra giả thiết bỏ qua lực cản không khí.</td></tr><tr><td>Nhầm tầm xa với độ cao trong ném ngang</td><td>Phân tích theo hai trục và xác định rõ h, L.</td></tr></tbody></table></div><h4>12.3. Tự kiểm tra trước khi nộp bài</h4><p class="knowledge-list-item">• ☐ Đã ghi rõ chiều dương và mốc thời gian chưa?</p><p class="knowledge-list-item">• ☐ Đã phân biệt quãng đường và độ dịch chuyển chưa?</p><p class="knowledge-list-item">• ☐ Đơn vị đã thống nhất chưa?</p><p class="knowledge-list-item">• ☐ Công thức có đúng điều kiện áp dụng không?</p><p class="knowledge-list-item">• ☐ Kết quả có dấu và đơn vị phù hợp không?</p><p class="knowledge-list-item">• ☐ Nếu dùng đồ thị, đã đọc đúng tỉ lệ hai trục chưa?</p></article><article class="card knowledge-card knowledge-section" data-search="tài liệu cơ sở" id="knowledge-section-13"><span class="tag">CHƯƠNG ĐỘNG HỌC</span><h3>TÀI LIỆU CƠ SỞ</h3><p>Nguồn chính: SGK Vật lí 10, tài liệu PDF do người học cung cấp trong cuộc trò chuyện. Phạm vi nội dung được xác định theo mục lục SGK: Chương II – Động học, Bài 4 đến Bài 12 (trang sách in khoảng 21–55).</p><p>Các công thức được trình bày theo kí hiệu thông dụng và có ghi chú quy ước trục tọa độ. Khi làm bài cụ thể, cần đối chiếu quy ước dấu, giả thiết và cách kí hiệu được nêu trong đề bài/SGK.</p></article></div>
+</div>
+</section>
+</div>
+<section class="page hidden" id="page-practice">
+<div class="page-head"><div><h2>Luyện tập &amp; kiểm tra kiến thức</h2><p>Tạo đề kiểm tra riêng cho từng bài học trong Chương II – Động học bằng Gemini AI.</p></div></div>
+<div class="notice">Toàn bộ câu hỏi của mỗi lượt kiểm tra được AI tạo mới từ đúng nội dung bài học tương ứng trong mục <b>Sổ tay kiến thức</b>. Mỗi đề luôn có 15 câu trắc nghiệm và 5 câu trả lời ngắn. Hệ thống lưu các câu đã tạo trên trình duyệt này và gửi danh sách câu gần đây cho AI để hạn chế lặp lại. Không sử dụng ngân hàng câu hỏi tĩnh.</div>
+<div class="grid two-col"><div class="card"><div class="card-title"><div><h3>Thiết lập bài kiểm tra</h3><p>Chọn bài học và học sinh thực hiện</p></div><span class="pill blue">20 câu · 10 điểm</span></div>
+<div class="field"><label>Bài học</label><select id="quizLesson" onchange="updateQuizLessonInfo()"></select></div>
+<div class="knowledge-example" id="quizLessonInfo"></div>
+<div class="field" style="margin-top:14px"><label>Học sinh</label><select id="quizStudent"></select></div>
+<div class="field"><label>Thời gian làm bài (phút)</label><select id="quizDuration"><option value="0">Không giới hạn</option><option value="20">20 phút</option><option selected="" value="30">30 phút</option><option value="40">40 phút</option><option value="45">45 phút</option></select></div>
+<div class="actions" style="flex-wrap:wrap"><button class="secondary" id="generateAiQuizBtn" onclick="generateAiQuiz()">✦ Tạo đề mới bằng AI</button><button class="primary" onclick="startQuiz()">▶ Bắt đầu làm bài</button></div><p class="muted" id="aiQuizStatus" style="font-size:12px;margin:10px 0 0">Chọn bài học và học sinh, sau đó nhấn “Tạo đề mới bằng AI”.</p></div>
+<div class="card"><div class="card-title"><div><h3>Kết quả gần đây</h3><p>Lịch sử làm bài được lưu trên trình duyệt này</p></div><span class="pill green" id="quizAttemptCount">0 lượt</span></div><div id="quizHistory"><div class="empty">Chưa có lượt làm bài.</div></div></div></div>
+<div class="card hidden" id="quizWorkspace" style="margin-top:18px"><div class="card-title"><div><h3 id="quizTitle">Bài kiểm tra</h3><p id="quizStudentLabel"></p></div><div class="actions"><span class="pill amber" id="quizTimer">Không giới hạn</span><span class="pill blue" id="quizProgress">0/20 câu</span></div></div>
+<div class="progress" style="margin-bottom:18px"><span id="quizProgressBar" style="width:0%"></span></div><div id="quizQuestions"></div><div class="form-actions"><button class="secondary" onclick="cancelQuiz()">Hủy bài</button><button class="primary" onclick="submitQuiz()">Nộp bài và xem kết quả</button></div></div>
+<div class="card hidden" id="quizResult" style="margin-top:18px"></div>
+</section></main>
+</div>
+<div class="toast hidden" id="toast" role="status"></div>
+<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+<script>
+const KEY='physassess_demo_v1';
+const defaultState={
+ students:[
+  {id:'s1',name:'Nguyễn Minh Anh',className:'10A1'},
+  {id:'s2',name:'Trần Gia Bảo',className:'10A1'},
+  {id:'s3',name:'Lê Khánh Linh',className:'10A1'},
+  {id:'s4',name:'Phạm Quốc Huy',className:'10A1'},
+  {id:'s5',name:'Võ Hoàng Nam',className:'10A2'},
+  {id:'s6',name:'Đặng Ngọc Mai',className:'10A2'},
+  {id:'s7',name:'Bùi Đức Anh',className:'10A2'},
+  {id:'s8',name:'Phan Thảo Vy',className:'10A2'}
+ ],
+ rubric:{id:'r1',name:'Khảo sát chuyển động của vật',task:'Thu thập dữ liệu chuyển động, xử lý kết quả và giải thích hiện tượng bằng kiến thức vật lý.',criteria:['Thu thập dữ liệu chính xác','Xử lý và biểu diễn dữ liệu','Giải thích bằng kiến thức vật lý','Vận dụng vào tình huống thực tiễn']},
+ assessments:[
+  {id:'a1',studentId:'s1',rubricId:'r1',scores:[4,3,3,4],evidence:'Ghi đủ số liệu, có đơn vị; giải thích được kết quả.',note:'Cần trình bày rõ hơn cách xử lý dữ liệu.',date:'2026-10-20',approved:false},
+  {id:'a2',studentId:'s2',rubricId:'r1',scores:[3,3,2,3],evidence:'Thu thập dữ liệu khá đầy đủ; phần giải thích còn thiếu căn cứ.',note:'Gợi ý đối chiếu dữ liệu với mô hình chuyển động.',date:'2026-10-21',approved:false},
+  {id:'a3',studentId:'s5',rubricId:'r1',scores:[2,3,3,2],evidence:'Một số phép đo chưa nhất quán; có liên hệ thực tiễn.',note:'Cần kiểm tra lại quy trình đo.',date:'2026-10-22',approved:false}
+ ]
+};
+let state=loadState(), currentPage='dashboard';
+const selectedStudentIds=new Set();
+function loadState(){try{const v=localStorage.getItem(KEY);return v?JSON.parse(v):structuredClone(defaultState)}catch(e){return JSON.parse(JSON.stringify(defaultState))}}
+function persist(){localStorage.setItem(KEY,JSON.stringify(state));renderAll()}
+function uid(prefix){return prefix+'_'+Date.now().toString(36)+'_'+Math.random().toString(36).slice(2,6)}
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function student(id){return state.students.find(s=>s.id===id)}
+function scoreText(scores){if(!scores||!scores.length)return '—';return (scores.reduce((a,b)=>a+b,0)/scores.length).toFixed(2).replace('.',',')}
+function avgScores(){const a=state.assessments;return a.length?a.reduce((sum,x)=>sum+x.scores.reduce((p,n)=>p+n,0)/x.scores.length,0)/a.length:null}
+function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.remove('hidden');clearTimeout(window._toastTimer);window._toastTimer=setTimeout(()=>t.classList.add('hidden'),2600)}
+function navigate(page){currentPage=page;document.querySelectorAll('.page').forEach(p=>p.classList.add('hidden'));document.getElementById('page-'+page).classList.remove('hidden');document.querySelectorAll('#nav button').forEach(b=>b.classList.toggle('active',b.dataset.page===page));const labels={dashboard:'Tổng quan',classes:'Lớp học & học sinh',rubrics:'Rubric đánh giá',assess:'Đánh giá trực tiếp',reports:'Báo cáo kết quả',feedback:'Phản hồi học tập',knowledge:'Sổ tay kiến thức',practice:'Luyện tập & kiểm tra'};document.getElementById('topTitle').textContent=labels[page];document.getElementById('crumb').textContent=labels[page];renderAll();window.scrollTo({top:0,behavior:'smooth'})}
+document.querySelectorAll('#nav button').forEach(b=>b.addEventListener('click',()=>navigate(b.dataset.page)));
+function toggleMobileNav(){const side=document.querySelector('.sidebar');const shown=side.style.display==='flex';side.style.cssText=shown?'':'display:flex;position:fixed;z-index:30;inset:0 auto 0 0;width:260px;max-width:85vw;box-shadow:0 0 0 9999px #0005';}
+
+
+function filterKnowledge(){
+ const q=(document.getElementById('knowledgeSearch')?.value||'').trim().toLocaleLowerCase('vi');
+ const sections=[...document.querySelectorAll('.knowledge-section')];
+ sections.forEach((el,i)=>{
+   const visible=!q || (el.innerText||'').toLocaleLowerCase('vi').includes(q);
+   el.classList.toggle('hidden',!visible);
+   const btn=document.querySelectorAll('#knowledgeTopics button')[i];
+   if(btn) btn.classList.toggle('hidden',!visible);
+ });
+}
+function showKnowledgeSection(index){
+ const target=document.getElementById('knowledge-section-'+index);
+ if(!target)return;
+ document.getElementById('knowledgeSearch').value='';
+ filterKnowledge();
+ target.scrollIntoView({behavior:'smooth',block:'start'});
+}
+function renderKnowledge(){filterKnowledge()}
+function printKnowledge(){
+ const old=document.getElementById('knowledgeSearch').value;
+ document.getElementById('knowledgeSearch').value='';
+ filterKnowledge();
+ window.print();
+ document.getElementById('knowledgeSearch').value=old;
+ filterKnowledge();
+}
+
+function renderAll(){renderDashboard();renderClasses();renderRubric();renderAssessmentOptions();renderAssessmentCriteria();renderReports();renderFeedbackOptions();if(currentPage==='knowledge')renderKnowledge();if(currentPage==='practice')renderPractice()}
+function renderDashboard(){
+ document.getElementById('statClasses').textContent=new Set(state.students.map(s=>s.className)).size;
+ document.getElementById('statStudents').textContent=state.students.length;
+ document.getElementById('statAssessments').textContent=state.assessments.length;
+ document.getElementById('statAverage').textContent=avgScores()===null?'—':avgScores().toFixed(1).replace('.',',')+'/4';
+ document.getElementById('dashRubricCount').textContent=state.rubric.criteria.length+' tiêu chí';
+ document.getElementById('dashAssessmentCount').textContent=state.assessments.length+' lượt';
+ document.getElementById('dashRubricText').textContent=state.rubric.name;
+ document.getElementById('dashboardChart').innerHTML=makeChart(criteriaAverages());
+ const recent=[...state.assessments].sort((a,b)=>b.date.localeCompare(a.date)).slice(0,4);
+ document.getElementById('recentTable').innerHTML=recent.length?table(['Học sinh','Nhiệm vụ','Điểm TB','Ngày'],recent.map(a=>[esc(student(a.studentId)?.name||'Đã xóa'),esc(state.rubric.name),scoreText(a.scores)+'/4',fmtDate(a.date)])):'<div class="empty">Chưa có lượt đánh giá.</div>';
+}
+function table(headers,rows){return '<div class="table-wrap"><table><thead><tr>'+headers.map(h=>'<th>'+h+'</th>').join('')+'</tr></thead><tbody>'+rows.map(r=>'<tr>'+r.map(x=>'<td>'+x+'</td>').join('')+'</tr>').join('')+'</tbody></table></div>'}
+function fmtDate(d){if(!d)return '—';const p=d.split('-');return p.length===3?`${p[2]}/${p[1]}/${p[0]}`:d}
+function renderClasses(){
+ const filter=document.getElementById('classFilter'), old=filter.value||'all', classes=[...new Set(state.students.map(s=>s.className))].sort();
+ filter.innerHTML='<option value="all">Tất cả lớp</option>'+classes.map(c=>`<option value="${esc(c)}">${esc(c)}</option>`).join('');
+ if(classes.includes(old))filter.value=old;
+ const q=(document.getElementById('studentSearch')?.value||'').toLowerCase(), f=filter.value;
+ const list=state.students.filter(s=>(f==='all'||s.className===f)&&s.name.toLowerCase().includes(q));
+ document.getElementById('studentCountLabel').textContent=`${list.length} học sinh đang hiển thị`;
+ document.getElementById('classOptions').innerHTML=classes.map(c=>`<option value="${esc(c)}">`).join('');
+ const visibleIds=list.map(s=>s.id);
+ const selectedVisible=visibleIds.filter(id=>selectedStudentIds.has(id)).length;
+ const bulkBar=`<div class="actions" style="justify-content:space-between;align-items:center;padding:10px 12px;margin:0 0 10px;background:var(--surface-2,#f4f7f6);border:1px solid var(--line);border-radius:12px"><span><b>${selectedStudentIds.size}</b> học sinh đã chọn</span><div class="actions"><button class="secondary small" type="button" onclick="clearStudentSelection()">Bỏ chọn</button><button class="danger small" type="button" onclick="deleteSelectedStudents()" ${selectedStudentIds.size?'':'disabled'}>🗑 Xóa học sinh đã chọn</button></div></div>`;
+ document.getElementById('studentsTable').innerHTML=bulkBar+(list.length?table([`<input type="checkbox" aria-label="Chọn tất cả học sinh đang hiển thị" onchange="toggleVisibleStudents(this.checked)" ${visibleIds.length&&selectedVisible===visibleIds.length?'checked':''}>`,'Học sinh','Lớp','Lượt đánh giá','Điểm TB','Thao tác'],list.map(s=>{const a=state.assessments.filter(x=>x.studentId===s.id);const av=a.length?a.reduce((t,x)=>t+x.scores.reduce((p,n)=>p+n,0)/x.scores.length,0)/a.length:null;return [`<input type="checkbox" aria-label="Chọn ${esc(s.name)}" onchange="toggleStudentSelection('${s.id}',this.checked)" ${selectedStudentIds.has(s.id)?'checked':''}>`,esc(s.name),esc(s.className),a.length,av===null?'—':av.toFixed(2)+'/4',`<button class="secondary small" onclick="editStudent('${s.id}')">Sửa</button> <button class="danger small" onclick="deleteStudent('${s.id}')">Xóa</button>`]})):'<div class="empty">Không tìm thấy học sinh. Hãy thêm học sinh mới.</div>');
+}
+function openClassForm(){document.getElementById('classForm').classList.remove('hidden');document.getElementById('studentForm').reset();document.getElementById('studentId').value='';document.getElementById('classFormTitle').textContent='Thêm học sinh';document.getElementById('studentName').focus()}
+function closeClassForm(){document.getElementById('classForm').classList.add('hidden')}
+function editStudent(id){const s=student(id);if(!s)return;openClassForm();document.getElementById('classFormTitle').textContent='Chỉnh sửa học sinh';document.getElementById('studentId').value=id;document.getElementById('studentName').value=s.name;document.getElementById('studentClass').value=s.className}
+function saveStudent(e){e.preventDefault();const id=document.getElementById('studentId').value,name=document.getElementById('studentName').value.trim(),className=document.getElementById('studentClass').value.trim();if(!name||!className)return;if(id){Object.assign(student(id),{name,className})}else state.students.push({id:uid('s'),name,className});closeClassForm();persist();toast('Đã lưu thông tin học sinh.')}
+function deleteStudent(id){const s=student(id);if(!s)return;if(!confirm(`Xóa học sinh ${s.name}? Các lượt đánh giá cũ sẽ vẫn được lưu nhưng không còn gắn với hồ sơ hiện tại.`))return;state.students=state.students.filter(x=>x.id!==id);persist();toast('Đã xóa học sinh.')}
+function toggleStudentSelection(id,checked){if(checked)selectedStudentIds.add(id);else selectedStudentIds.delete(id);renderClasses()}
+function toggleVisibleStudents(checked){
+ const q=(document.getElementById('studentSearch')?.value||'').toLowerCase(),f=document.getElementById('classFilter')?.value||'all';
+ state.students.filter(st=>(f==='all'||st.className===f)&&st.name.toLowerCase().includes(q)).forEach(st=>checked?selectedStudentIds.add(st.id):selectedStudentIds.delete(st.id));
+ renderClasses();
+}
+function clearStudentSelection(){selectedStudentIds.clear();renderClasses()}
+function deleteSelectedStudents(){
+ const ids=[...selectedStudentIds].filter(id=>state.students.some(st=>st.id===id));
+ if(!ids.length){toast('Bạn chưa chọn học sinh nào.');return}
+ if(!confirm(`Bạn chắc chắn muốn xóa ${ids.length} học sinh đã chọn? Các lượt đánh giá cũ vẫn được lưu nhưng không còn gắn với hồ sơ hiện tại.`))return;
+ const idSet=new Set(ids);state.students=state.students.filter(st=>!idSet.has(st.id));selectedStudentIds.clear();persist();toast(`Đã xóa ${ids.length} học sinh.`)
+}
+const LEVEL_NAMES=['Chưa đạt','Đạt một phần','Đạt tốt','Thành thạo'];
+const LEVEL_HINTS={
+ generic:['Chưa thực hiện được yêu cầu hoặc thực hiện sai lệch đáng kể.','Thực hiện được một phần khi có hướng dẫn; còn thiếu hoặc sai sót.','Thực hiện cơ bản chính xác, tương đối độc lập và có giải thích.','Thực hiện chính xác, chủ động; biết kiểm tra và giải thích thuyết phục.'],
+ investigate:[
+ ['Chưa xác định được thông tin cần tìm hiểu hoặc không nêu được câu hỏi phù hợp.','Nêu được câu hỏi nhưng chưa xác định rõ thông tin cần thu thập.','Xác định được câu hỏi và thông tin cần thu thập phù hợp.','Chủ động xác định câu hỏi, biến cần khảo sát và đề xuất cách thu thập thông tin phù hợp.'],
+ ['Không lựa chọn hoặc sử dụng được dụng cụ/phương án khảo sát.','Sử dụng được dụng cụ khi có hướng dẫn nhưng thao tác còn thiếu chính xác.','Lựa chọn và sử dụng dụng cụ phù hợp, thao tác tương đối chính xác.','Lựa chọn tối ưu, thao tác thành thạo và chủ động kiểm soát sai số.'],
+ ['Không ghi nhận được dữ liệu hoặc dữ liệu không có căn cứ.','Có dữ liệu nhưng thiếu, chưa thống nhất đơn vị hoặc cách ghi.','Thu thập và ghi chép dữ liệu khá đầy đủ, đúng đơn vị.','Dữ liệu đầy đủ, có kiểm tra tính hợp lý và nhận diện được nguồn sai số.'],
+ ['Không rút ra được nhận xét từ kết quả.','Nêu nhận xét đơn giản nhưng chưa dựa rõ vào dữ liệu.','Phân tích dữ liệu và rút ra kết luận phù hợp.','Đánh giá độ tin cậy, giải thích kết quả và đề xuất cải tiến khảo sát.']],
+ apply:[
+ ['Chưa nhận ra kiến thức vật lý liên quan đến tình huống.','Nhận ra một phần kiến thức liên quan nhưng lựa chọn chưa phù hợp.','Lựa chọn đúng kiến thức và đại lượng vật lý cần sử dụng.','Kết nối linh hoạt nhiều kiến thức để phân tích tình huống.'],
+ ['Không thiết lập được cách giải quyết.','Đề xuất được cách làm nhưng còn thiếu bước hoặc cần hỗ trợ.','Đề xuất và thực hiện được cách giải quyết phù hợp.','Lựa chọn, giải thích và tối ưu được phương án giải quyết.'],
+ ['Kết quả sai hoặc không có lập luận.','Có kết quả nhưng lập luận còn thiếu hoặc sai sót.','Kết quả cơ bản chính xác, lập luận rõ ràng.','Kết quả chính xác, biết kiểm tra và đánh giá giới hạn của lời giải.'],
+ ['Chưa liên hệ được kiến thức với thực tiễn.','Nêu được liên hệ nhưng giải thích còn chung chung.','Giải thích được tình huống thực tiễn bằng kiến thức vật lý.','Vận dụng để đề xuất giải pháp khả thi cho tình huống mới.']],
+ cognitive:[
+ ['Chưa nhận biết hoặc phát biểu đúng khái niệm/hiện tượng.','Nhận biết được nhưng mô tả còn thiếu hoặc nhầm lẫn.','Phát biểu và mô tả đúng khái niệm/hiện tượng.','Mô tả chính xác, phân biệt được với các khái niệm gần gũi.'],
+ ['Chưa lựa chọn được đại lượng, đơn vị hoặc mối quan hệ phù hợp.','Xác định được một số đại lượng nhưng còn nhầm lẫn.','Xác định đúng đại lượng, đơn vị và mối quan hệ.','Phân tích được mối quan hệ giữa các đại lượng và điều kiện áp dụng.'],
+ ['Không giải thích được hiện tượng bằng kiến thức vật lý.','Giải thích được một phần nhưng lập luận chưa đầy đủ.','Giải thích hợp lý, sử dụng đúng kiến thức vật lý.','Giải thích sâu, có lập luận và liên hệ được các kiến thức liên quan.'],
+ ['Không sử dụng được kiến thức trong tình huống mới.','Vận dụng được khi có gợi ý trực tiếp.','Vận dụng đúng kiến thức vào tình huống quen thuộc.','Vận dụng linh hoạt vào tình huống mới và đánh giá tính hợp lý.']],
+ experiment:[
+ ['Không xác định được mục đích hoặc quy trình thí nghiệm.','Nêu được mục đích nhưng quy trình còn thiếu bước.','Nêu đúng mục đích và thực hiện theo quy trình.','Chủ động đề xuất, điều chỉnh quy trình phù hợp mục đích.'],
+ ['Thao tác sai hoặc không bảo đảm an toàn.','Thao tác được khi có hỗ trợ; còn thiếu chính xác.','Thao tác đúng, sử dụng dụng cụ an toàn.','Thao tác thành thạo, an toàn và biết khắc phục sự cố nhỏ.'],
+ ['Không ghi được số liệu đáng tin cậy.','Số liệu còn thiếu hoặc chưa thống nhất.','Ghi số liệu đầy đủ, đúng đơn vị và trình tự.','Kiểm tra lặp lại, đánh giá sai số và độ tin cậy của số liệu.'],
+ ['Không xử lý hoặc không trình bày được kết quả.','Xử lý được một phần khi có hướng dẫn.','Xử lý, biểu diễn và nhận xét kết quả đúng.','Phân tích sâu, đánh giá sai số và đề xuất cải tiến thí nghiệm.']],
+ collaborate:[
+ ['Không tham gia hoặc không thực hiện nhiệm vụ được giao.','Tham gia khi được nhắc nhở; hoàn thành một phần nhiệm vụ.','Chủ động thực hiện nhiệm vụ được phân công.','Chủ động hỗ trợ nhóm và chịu trách nhiệm đến cùng với nhiệm vụ.'],
+ ['Không trao đổi hoặc không lắng nghe ý kiến.','Có trao đổi nhưng chưa rõ ràng hoặc ít lắng nghe.','Trình bày rõ ý kiến và biết lắng nghe thành viên.','Trao đổi có căn cứ, phản hồi xây dựng và kết nối ý kiến nhóm.'],
+ ['Không phối hợp để hoàn thành sản phẩm.','Phối hợp chưa đều, sản phẩm còn thiếu thống nhất.','Phối hợp hiệu quả để hoàn thành sản phẩm chung.','Điều phối hợp lý, hỗ trợ giải quyết bất đồng và nâng chất lượng sản phẩm.'],
+ ['Không đóng góp vào báo cáo/sản phẩm chung.','Đóng góp còn rời rạc, thiếu căn cứ.','Trình bày được kết quả và căn cứ của nhóm.','Trình bày thuyết phục, trả lời câu hỏi và bảo vệ kết quả bằng minh chứng.']]
+};
+function defaultLevels(kind,index){const a=(LEVEL_HINTS[kind]||[])[index];return a?a.slice():LEVEL_HINTS.generic.slice()}
+function ensureRubricLevels(){if(!state.rubric.levels||state.rubric.levels.length!==state.rubric.criteria.length)state.rubric.levels=state.rubric.criteria.map((c,i)=>defaultLevels('generic',i));}
+function renderRubric(){
+ ensureRubricLevels();
+ document.getElementById('rubricSub').textContent=state.rubric.criteria.length+' tiêu chí · 4 mức độ';
+ document.getElementById('rubricList').innerHTML=state.rubric.criteria.map((c,i)=>`<div class="criteria"><div class="criteria-head"><div><strong>${i+1}. ${esc(c)}</strong><small>Tiêu chí ${i+1} · Có thể chỉnh sửa ở phần mô tả bên dưới</small></div><button class="danger small" onclick="removeRubricCriterion(${i})">Xóa</button></div></div>`).join('')||'<div class="empty">Chưa có tiêu chí. Hãy tạo rubric tự động hoặc thêm tiêu chí.</div>';
+ document.getElementById('rubricEditor').innerHTML=state.rubric.criteria.map((c,i)=>`<div class="criteria"><div class="criteria-head"><div><strong>${i+1}. ${esc(c)}</strong><small>Mô tả hành vi quan sát được ở từng mức</small></div></div><div class="criterion-edit"><div><label>Tên tiêu chí</label><input value="${esc(c)}" onchange="updateCriterion(${i},this.value)"></div>${state.rubric.levels[i].map((v,j)=>`<div><label>Mức ${j+1} · ${LEVEL_NAMES[j]}</label><textarea onchange="updateLevel(${i},${j},this.value)">${esc(v)}</textarea></div>`).join('')}</div></div>`).join('');
+ document.getElementById('rubricName').value=state.rubric.name;
+ document.getElementById('rubricTask').value=state.rubric.task;
+}
+function updateCriterion(i,v){state.rubric.criteria[i]=v.trim()||'Tiêu chí chưa đặt tên';renderRubric();}
+function updateLevel(i,j,v){ensureRubricLevels();state.rubric.levels[i][j]=v;}
+function addRubricCriterion(){state.rubric.criteria.push('Tiêu chí mới');state.rubric.levels=state.rubric.criteria.map((c,i)=>state.rubric.levels[i]||defaultLevels('generic',i));renderRubric();}
+function removeRubricCriterion(i){if(state.rubric.criteria.length<=1){toast('Rubric cần có ít nhất một tiêu chí.');return}state.rubric.criteria.splice(i,1);state.rubric.levels.splice(i,1);renderRubric();}
+async function generateRubricWithAI(){
+ const btn=document.getElementById('aiRubricBtn');
+ const status=document.getElementById('aiRubricStatus');
+ const file=document.getElementById('rubricFile')?.files?.[0];
+ const topic=document.getElementById('rubricTopic').value.trim();
+ const task=document.getElementById('rubricTask').value.trim();
+ if(!topic&&!file){toast('Hãy nhập chủ đề bài học hoặc tải lên giáo án.');return;}
+ if(!task&&!file){toast('Hãy mô tả nhiệm vụ học tập hoặc tải lên giáo án.');return;}
+ if(file && file.size>15*1024*1024){toast('Tệp vượt quá 15 MB. Vui lòng chọn tệp nhỏ hơn.');return;}
+ const form=new FormData();
+ form.append('rubricName',document.getElementById('rubricName').value.trim());
+ form.append('topic',topic);
+ form.append('competency',document.getElementById('rubricCompetency').selectedOptions[0]?.text||'');
+ form.append('mode',document.getElementById('rubricMode').selectedOptions[0]?.text||'');
+ form.append('task',task);
+ form.append('evidence',document.getElementById('rubricEvidence').value.trim());
+ if(file)form.append('lessonFile',file);
+ btn.disabled=true;btn.textContent='Đang phân tích giáo án…';status.textContent='Đang gửi thông tin đến AI. Quá trình có thể mất một chút thời gian.';
+ try{
+   const response=await fetch('/api/create-rubric',{method:'POST',body:form});
+   const data=await response.json().catch(()=>({}));
+   if(!response.ok)throw new Error(data.error||'Máy chủ không thể tạo Rubric.');
+   if(!data.criteria?.length)throw new Error('AI chưa tạo được tiêu chí. Hãy bổ sung thông tin nhiệm vụ học tập.');
+   state.rubric={id:state.rubric.id||uid('r'),name:data.rubric_name||document.getElementById('rubricName').value.trim()||'Rubric do AI đề xuất',topic:data.topic||topic,competency:document.getElementById('rubricCompetency').value,mode:document.getElementById('rubricMode').value,task:data.task_summary||task,evidence:document.getElementById('rubricEvidence').value.trim(),criteria:data.criteria.map(x=>x.name),levels:data.criteria.map(x=>[x.level1,x.level2,x.level3,x.level4]),aiAnalysis:data.analysis||'',aiWarnings:data.warnings||[]};
+   document.getElementById('rubricName').value=state.rubric.name;
+   document.getElementById('rubricTask').value=state.rubric.task;
+   renderRubric();
+   const notes=[...(data.warnings||[])];
+   status.textContent='AI đã tạo '+data.criteria.length+' tiêu chí. '+(data.analysis||'')+(notes.length?' Lưu ý: '+notes.join(' '):'');
+   document.getElementById('rubricPreview').classList.add('hidden');
+   toast('Đã tạo Rubric bằng AI. Hãy kiểm tra và chỉnh sửa trước khi lưu.');
+ }catch(error){status.textContent='Lỗi: '+error.message;toast(error.message);}
+ finally{btn.disabled=false;btn.textContent='✦ Phân tích và tạo Rubric bằng AI';}
+}
+function generateRubric(){
+ const kind=document.getElementById('rubricCompetency').value, mode=document.getElementById('rubricMode').value;
+ const topic=document.getElementById('rubricTopic').value.trim()||'chủ đề Vật lý';
+ const task=document.getElementById('rubricTask').value.trim();
+ const customEvidence=document.getElementById('rubricEvidence').value.trim();
+ let criteria;
+ if(kind==='investigate')criteria=['Xác định vấn đề và thông tin cần tìm hiểu','Lựa chọn phương án và dụng cụ khảo sát','Thu thập, ghi chép dữ liệu','Phân tích dữ liệu và rút ra kết luận'];
+ else if(kind==='apply')criteria=['Nhận diện và lựa chọn kiến thức vật lý','Đề xuất phương án giải quyết','Thực hiện và kiểm tra kết quả','Vận dụng kiến thức vào tình huống thực tiễn'];
+ else if(kind==='cognitive')criteria=['Nhận biết và mô tả kiến thức vật lý','Xác định đại lượng và mối quan hệ vật lý','Giải thích hiện tượng bằng kiến thức vật lý','Vận dụng kiến thức trong tình huống mới'];
+ else if(kind==='experiment')criteria=['Xác định mục đích và quy trình thí nghiệm','Sử dụng dụng cụ và thực hiện thao tác','Thu thập và ghi chép số liệu','Xử lý, biểu diễn và đánh giá kết quả'];
+ else criteria=['Thực hiện nhiệm vụ được phân công','Trao đổi và lắng nghe ý kiến','Phối hợp giải quyết nhiệm vụ nhóm','Trình bày và bảo vệ kết quả'];
+ if(mode==='simulation'){criteria[1]=kind==='experiment'?'Thiết lập thông số và thao tác mô phỏng':'Khai thác mô phỏng để kiểm tra giả thuyết';criteria[2]='Quan sát, thu thập và ghi nhận kết quả mô phỏng';}
+ if(mode==='project'){criteria[2]='Xây dựng và hoàn thiện sản phẩm học tập';criteria[3]='Trình bày, đánh giá và vận dụng sản phẩm';}
+ if(mode==='problem'){criteria[0]='Phân tích tình huống và xác định vấn đề vật lý';criteria[1]='Lựa chọn kiến thức và đề xuất giải pháp';}
+ state.rubric={id:state.rubric.id||uid('r'),name:document.getElementById('rubricName').value.trim()||`Rubric ${topic}`,topic,competency:kind,mode,task,evidence:customEvidence,criteria,levels:criteria.map((c,i)=>defaultLevels(kind,i))};
+ renderRubric();document.getElementById('rubricPreview').classList.add('hidden');toast('Đã đề xuất rubric theo năng lực và hình thức hoạt động. Hãy rà soát trước khi lưu.');
+}
+function saveRubric(){
+ const name=document.getElementById('rubricName').value.trim(),task=document.getElementById('rubricTask').value.trim();
+ if(!name||!task||!state.rubric.criteria.length){toast('Vui lòng nhập tên, nhiệm vụ và ít nhất một tiêu chí.');return}
+ state.rubric.name=name;state.rubric.task=task;ensureRubricLevels();
+ if(state.rubric.criteria.some(c=>!c.trim())||state.rubric.levels.some(a=>a.some(v=>!v.trim()))){toast('Mỗi tiêu chí và 4 mức mô tả cần có nội dung.');return}
+ persist();toast('Đã lưu rubric và áp dụng cho chức năng đánh giá.');
+}
+function previewRubric(){
+ ensureRubricLevels();const box=document.getElementById('rubricPreview');box.classList.remove('hidden');
+ box.innerHTML=`<h3>${esc(state.rubric.name)}</h3><p class="muted">${esc(state.rubric.task)}</p>`+table(['Tiêu chí','Mức 1 · Chưa đạt','Mức 2 · Đạt một phần','Mức 3 · Đạt tốt','Mức 4 · Thành thạo'],state.rubric.criteria.map((c,i)=>[esc(c),...state.rubric.levels[i].map(esc)]));
+}
+function resetRubricForm(){state.rubric=JSON.parse(JSON.stringify(defaultState.rubric));state.rubric.levels=state.rubric.criteria.map((c,i)=>defaultLevels('generic',i));renderRubric();document.getElementById('rubricTopic').value='Chuyển động của vật';document.getElementById('rubricCompetency').value='investigate';toast('Đã khôi phục rubric mẫu.')}
+function renderAssessmentOptions(){
+ const stu=document.getElementById('assessStudent'), rub=document.getElementById('assessRubric'), prevS=stu.value,prevR=rub.value;
+ stu.innerHTML=state.students.map(s=>`<option value="${s.id}">${esc(s.name)} — ${esc(s.className)}</option>`).join('');
+ rub.innerHTML=`<option value="${state.rubric.id}">${esc(state.rubric.name)}</option>`;
+ if(state.students.some(s=>s.id===prevS))stu.value=prevS;if(prevR)rub.value=prevR;
+}
+function renderAssessmentCriteria(){
+ const holder=document.getElementById('assessmentCriteria');if(!holder)return;ensureRubricLevels();
+ holder.innerHTML=state.rubric.criteria.map((c,i)=>`<div class="criteria"><div class="criteria-head"><div><strong>${i+1}. ${esc(c)}</strong><small>Chọn mức phù hợp nhất với minh chứng quan sát được</small></div></div><div class="score-options">${[1,2,3,4].map(n=>`<label><input type="radio" name="score${i}" value="${n}" ${n===3?'checked':''} required><b>${n} · ${LEVEL_NAMES[n-1]}</b><p style="font-size:11px;line-height:1.4;color:#64748b;margin:6px 0 0">${esc(state.rubric.levels[i][n-1])}</p></label>`).join('')}</div></div>`).join('');
+}
+function saveAssessment(e){e.preventDefault();if(!state.students.length){toast('Hãy thêm học sinh trước.');return}const scores=state.rubric.criteria.map((c,i)=>{const el=document.querySelector(`input[name="score${i}"]:checked`);return el?Number(el.value):0});if(scores.some(x=>!x)){toast('Hãy chọn mức cho tất cả tiêu chí.');return}state.assessments.push({id:uid('a'),studentId:document.getElementById('assessStudent').value,rubricId:state.rubric.id,scores,evidence:document.getElementById('evidence').value.trim(),note:document.getElementById('teacherNote').value.trim(),date:new Date().toISOString().slice(0,10),approved:false});persist();e.target.reset();renderAssessmentOptions();renderAssessmentCriteria();toast('Đã lưu lượt đánh giá.')}
+function criteriaAverages(){return state.rubric.criteria.map((name,i)=>{const vals=state.assessments.map(a=>a.scores[i]).filter(v=>typeof v==='number');return {name,value:vals.length?vals.reduce((a,b)=>a+b,0)/vals.length:0}})}
+function makeChart(items){if(!items.length)return '<div class="empty">Chưa có tiêu chí.</div>';return items.map(x=>`<div class="bar-wrap"><div class="bar-value">${x.value?x.value.toFixed(1):'—'}</div><div class="bar" style="height:${Math.max(3,x.value/4*130)}px"></div><div class="bar-label">${esc(shorten(x.name,15))}</div></div>`).join('')}
+function shorten(s,n){return s.length>n?s.slice(0,n-1)+'…':s}
+function renderReports(){
+ const assessments=state.assessments,avg=avgScores();
+ document.getElementById('reportCount').textContent=assessments.length;document.getElementById('reportAvg').textContent=avg===null?'—':avg.toFixed(2).replace('.',',')+'/4';
+ const high=assessments.length?Math.max(...assessments.map(a=>a.scores.reduce((x,y)=>x+y,0)/a.scores.length)):null;document.getElementById('reportHigh').textContent=high===null?'—':high.toFixed(2).replace('.',',');
+ document.getElementById('reportSupport').textContent=assessments.filter(a=>a.scores.some(s=>s<=2)).length;
+ document.getElementById('reportChart').innerHTML=makeChart(criteriaAverages());
+ const byStudent=state.students.map(s=>{const aa=assessments.filter(a=>a.studentId===s.id);return {s,avg:aa.length?aa.reduce((t,a)=>t+a.scores.reduce((p,n)=>p+n,0)/a.scores.length,0)/aa.length:null,count:aa.length}}).filter(x=>x.count);
+ document.getElementById('studentReport').innerHTML=byStudent.length?byStudent.sort((a,b)=>b.avg-a.avg).map(x=>`<div class="task-row"><div><strong>${esc(x.s.name)}</strong><small>${esc(x.s.className)} · ${x.count} lượt đánh giá</small><div class="progress"><span style="width:${x.avg/4*100}%"></span></div></div><div class="pct"><b>${x.avg.toFixed(2)}/4</b></div></div>`).join(''):'<div class="empty">Chưa có dữ liệu.</div>';
+ document.getElementById('assessmentHistory').innerHTML=assessments.length?table(['Ngày','Học sinh','Điểm TB','Minh chứng','Trạng thái'],[...assessments].sort((a,b)=>b.date.localeCompare(a.date)).map(a=>[fmtDate(a.date),esc(student(a.studentId)?.name||'Học sinh đã xóa'),scoreText(a.scores)+'/4',esc(a.evidence||'—'),a.approved?'<span class="pill green">Đã duyệt</span>':'<span class="pill amber">Chưa duyệt</span>'])):'<div class="empty">Chưa có lượt đánh giá.</div>';
+}
+function renderFeedbackOptions(){const sel=document.getElementById('feedbackSelect'),old=sel.value;sel.innerHTML=state.assessments.map(a=>`<option value="${a.id}">${esc(student(a.studentId)?.name||'Học sinh đã xóa')} · ${fmtDate(a.date)} · ${scoreText(a.scores)}/4</option>`).join('');if(state.assessments.some(a=>a.id===old))sel.value=old;generateFeedback()}
+function selectedAssessment(){return state.assessments.find(a=>a.id===document.getElementById('feedbackSelect').value)}
+function generateFeedback(){const a=selectedAssessment();if(!a){document.getElementById('feedbackEvidence').value='';document.getElementById('feedbackText').value='';renderFeedbackImages();return}document.getElementById('feedbackEvidence').value=a.evidence||'Chưa ghi minh chứng.';renderFeedbackImages();const strengths=[],improve=[];state.rubric.criteria.forEach((c,i)=>{const v=a.scores[i];if(v>=3)strengths.push(c.toLowerCase());else improve.push(c.toLowerCase())});let msg=`Em đã hoàn thành nhiệm vụ “${state.rubric.name}”. `;if(strengths.length)msg+=`Điểm mạnh: em thể hiện tốt ở ${strengths.join(', ')}. `;if(improve.length)msg+=`Để tiến bộ hơn, em cần tập trung cải thiện ${improve.join(', ')}. `;if(a.evidence)msg+=`Minh chứng ghi nhận: ${a.evidence} `;msg+='Hãy kiểm tra lại dữ liệu, giải thích bằng kiến thức vật lý và liên hệ với tình huống thực tiễn ở lần thực hiện tiếp theo.';document.getElementById('feedbackText').value=msg;document.getElementById('feedbackStatus').textContent=a.approved?'Đã duyệt':'Chưa duyệt';document.getElementById('feedbackStatus').className='pill '+(a.approved?'green':'amber')}
+function renderFeedbackImages(){const a=selectedAssessment(),gallery=document.getElementById('feedbackImageGallery'),msg=document.getElementById('feedbackImageMessage');if(!gallery)return;gallery.innerHTML='';const images=a?.evidenceImages||[];msg.textContent=a?`${images.length} ảnh minh chứng đã lưu cho lượt đánh giá này.`:'Hãy chọn một lượt đánh giá để đính kèm ảnh minh chứng.';images.forEach((im,i)=>{const item=document.createElement('div');item.className='evidence-thumb';const img=document.createElement('img');img.src=im.data;img.alt=im.name||`Minh chứng ${i+1}`;const name=document.createElement('small');name.textContent=im.name||`Ảnh ${i+1}`;const del=document.createElement('button');del.type='button';del.title='Xóa ảnh';del.textContent='×';del.onclick=()=>removeFeedbackImage(i);item.append(img,name,del);gallery.appendChild(item)})}
+async function handleFeedbackImages(event){const a=selectedAssessment(),input=event.target;if(!a){toast('Vui lòng chọn lượt đánh giá trước khi tải ảnh.');input.value='';return}const files=Array.from(input.files||[]);for(const file of files){if(!file.type.startsWith('image/')){toast('Chỉ chấp nhận tệp hình ảnh.');continue}if(file.size>8*1024*1024){toast(`Ảnh ${file.name} vượt quá 8 MB.`);continue}try{const data=await compressEvidenceImage(file);a.evidenceImages=a.evidenceImages||[];a.evidenceImages.push({name:file.name,data});persist()}catch(err){toast(`Không thể đọc ảnh ${file.name}.`)}}input.value='';renderFeedbackImages();toast('Đã lưu ảnh minh chứng vào lượt đánh giá.')}
+function compressEvidenceImage(file){return new Promise((resolve,reject)=>{const reader=new FileReader();reader.onerror=reject;reader.onload=()=>{const img=new Image();img.onerror=reject;img.onload=()=>{const max=1400,scale=Math.min(1,max/Math.max(img.width,img.height)),canvas=document.createElement('canvas');canvas.width=Math.round(img.width*scale);canvas.height=Math.round(img.height*scale);canvas.getContext('2d').drawImage(img,0,0,canvas.width,canvas.height);resolve(canvas.toDataURL('image/jpeg',0.78))};img.src=reader.result};reader.readAsDataURL(file)})}
+function removeFeedbackImage(index){const a=selectedAssessment();if(!a||!a.evidenceImages)return;a.evidenceImages.splice(index,1);persist();renderFeedbackImages();toast('Đã xóa ảnh minh chứng.')}
+
+function approveFeedback(){const a=selectedAssessment();if(!a){toast('Chưa có lượt đánh giá để duyệt.');return}if(!document.getElementById('feedbackText').value.trim()){toast('Hãy nhập nội dung phản hồi.');return}a.feedback=document.getElementById('feedbackText').value.trim();a.approved=true;persist();document.getElementById('feedbackStatus').textContent='Đã duyệt';document.getElementById('feedbackStatus').className='pill green';toast('Đã ghi nhận trạng thái duyệt.')}
+function copyFeedback(){const t=document.getElementById('feedbackText').value;if(!t){toast('Chưa có nội dung để sao chép.');return}if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(t).then(()=>toast('Đã sao chép phản hồi.')).catch(()=>fallbackCopy(t));else fallbackCopy(t)}
+function fallbackCopy(t){const x=document.createElement('textarea');x.value=t;document.body.appendChild(x);x.select();document.execCommand('copy');x.remove();toast('Đã sao chép phản hồi.')}
+function downloadCSV(name,rows){const csv='\ufeff'+rows.map(r=>r.map(v=>'"'+String(v??'').replace(/"/g,'""')+'"').join(',')).join('\r\n');const blob=new Blob([csv],{type:'text/csv;charset=utf-8;'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=name;a.click();URL.revokeObjectURL(url)}
+function exportStudents(){downloadCSV('danh_sach_hoc_sinh.csv',[['Họ tên','Lớp','Số lượt đánh giá'],...state.students.map(s=>[s.name,s.className,state.assessments.filter(a=>a.studentId===s.id).length])]);toast('Đã xuất danh sách CSV.')}
+function normalizeHeader(value){return String(value??'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/đ/g,'d').replace(/Đ/g,'D').toLowerCase().replace(/[^a-z0-9]/g,'')}
+function downloadStudentTemplate(){
+ const rows=[['Họ và tên','Lớp'],['Nguyễn Văn A','10A1'],['Trần Thị B','10A1']];
+ if(window.XLSX){const ws=XLSX.utils.aoa_to_sheet(rows);ws['!cols']=[{wch:28},{wch:14}];const wb=XLSX.utils.book_new();XLSX.utils.book_append_sheet(wb,ws,'Danh sach hoc sinh');XLSX.writeFile(wb,'Mau_danh_sach_hoc_sinh.xlsx')}
+ else downloadCSV('Mau_danh_sach_hoc_sinh.csv',rows);
+}
+function exportStudentsExcel(){
+ const rows=[['Họ và tên','Lớp','Số lượt đánh giá'],...state.students.map(s=>[s.name,s.className,state.assessments.filter(a=>a.studentId===s.id).length])];
+ if(window.XLSX){const ws=XLSX.utils.aoa_to_sheet(rows);ws['!cols']=[{wch:28},{wch:14},{wch:20}];const wb=XLSX.utils.book_new();XLSX.utils.book_append_sheet(wb,ws,'Hoc sinh');XLSX.writeFile(wb,'Danh_sach_hoc_sinh.xlsx')}
+ else {downloadCSV('Danh_sach_hoc_sinh.csv',rows);toast('Không tải được thư viện Excel; đã xuất CSV thay thế.')}
+}
+let pendingExcelImport=[];
+function detectStudentColumns(rows){
+ const aliasesName=['hovaten','hoten','tenhocsinh','studentname','fullname','name','ten'];
+ const aliasesClass=['lop','tenlop','malop','class','classname','khoilop'];
+ const scanLimit=Math.min(rows.length,8);
+ for(let r=0;r<scanLimit;r++){
+  const h=(rows[r]||[]).map(normalizeHeader);
+  const ni=h.findIndex(x=>aliasesName.includes(x));
+  const ci=h.findIndex(x=>aliasesClass.includes(x));
+  if(ni>=0&&ci>=0)return {headerRow:r,nameIndex:ni,classIndex:ci};
+ }
+ // Một số bảng chỉ ghi "Tên" và "Lớp" hoặc tên cột không chuẩn: ưu tiên cột đầu và cột thứ hai.
+ return {headerRow:-1,nameIndex:0,classIndex:1};
+}
+async function importStudentsFile(event){
+ const input=event.target,file=input.files?.[0];if(!file)return;
+ try{
+  let rows=[];
+  if(file.name.toLowerCase().endsWith('.csv')) rows=parseCSVRows(await file.text());
+  else{
+   if(!window.XLSX)throw new Error('Không tải được thư viện đọc Excel. Hãy kiểm tra Internet hoặc lưu file thành CSV UTF-8.');
+   const data=await file.arrayBuffer();
+   const wb=XLSX.read(data,{type:'array',cellDates:false});
+   const sheet=wb.Sheets[wb.SheetNames[0]];
+   rows=XLSX.utils.sheet_to_json(sheet,{header:1,defval:'',raw:false,blankrows:false});
+  }
+  rows=rows.filter(r=>Array.isArray(r)&&r.some(v=>String(v??'').trim()!==''));
+  if(!rows.length)throw new Error('File không có dữ liệu.');
+  // Quy ước nhập Excel: bỏ qua hoàn toàn dòng 1;
+  // từ dòng 2 trở đi, cột A là tên học sinh và cột B là lớp.
+  const start=1, nameIndex=0, classIndex=1;
+  const cleaned=[];
+  for(let i=start;i<rows.length;i++){
+   const row=rows[i]||[];
+   const name=String(row[nameIndex]??'').trim();
+   const className=String(row[classIndex]??'').trim();
+   if(!name&&!className)continue;
+   cleaned.push({name,className,rowNumber:i+1});
+  }
+  if(!cleaned.length)throw new Error('Không tìm thấy dòng dữ liệu gồm tên học sinh và lớp. Hãy kiểm tra hai cột đầu tiên.');
+  const existing=new Set(state.students.map(st=>normalizeHeader(st.name)+'|'+normalizeHeader(st.className)));
+  let duplicate=0,invalid=0;
+  const seen=new Set();
+  pendingExcelImport=cleaned.map(item=>{
+   const key=normalizeHeader(item.name)+'|'+normalizeHeader(item.className);
+   let status='Sẵn sàng nhập';
+   if(!item.name||!item.className){status='Thiếu tên hoặc lớp';invalid++;}
+   else if(existing.has(key)||seen.has(key)){status='Trùng học sinh';duplicate++;}
+   else seen.add(key);
+   return {...item,status};
+  });
+  const valid=pendingExcelImport.filter(x=>x.status==='Sẵn sàng nhập').length;
+  document.getElementById('excelPreviewSummary').textContent=`Tìm thấy ${cleaned.length} dòng · ${valid} hợp lệ · ${duplicate} trùng · ${invalid} thiếu thông tin.`;
+  document.getElementById('excelPreviewTable').innerHTML=table(['Dòng Excel','Họ và tên','Lớp','Trạng thái'],pendingExcelImport.slice(0,30).map(x=>[x.rowNumber,esc(x.name||'—'),esc(x.className||'—'),x.status==='Sẵn sàng nhập'?'<span class="pill green">Sẵn sàng</span>':x.status==='Trùng học sinh'?'<span class="pill amber">Trùng</span>':'<span class="pill red">Thiếu dữ liệu</span>']));
+  if(pendingExcelImport.length>30)document.getElementById('excelPreviewTable').insertAdjacentHTML('beforeend',`<div class="footer-note">Đang hiển thị 30/${pendingExcelImport.length} dòng đầu tiên. Khi xác nhận, hệ thống sẽ xử lý toàn bộ dữ liệu.</div>`);
+  document.getElementById('excelPreviewPanel').classList.remove('hidden');
+  document.getElementById('excelPreviewPanel').scrollIntoView({behavior:'smooth',block:'start'});
+ }catch(err){alert('Không thể đọc danh sách: '+err.message)}
+ finally{input.value=''}
+}
+function confirmExcelImport(){
+ const valid=pendingExcelImport.filter(x=>x.status==='Sẵn sàng nhập');
+ if(!pendingExcelImport.length){toast('Không có dữ liệu chờ nhập. Vui lòng chọn lại file Excel.');return}
+ if(!valid.length){toast('Không có dòng hợp lệ để nhập. Hãy kiểm tra trạng thái trong bảng xem trước.');return}
+ const before=state.students.length;
+ const added=valid.map(x=>({id:uid('s'),name:String(x.name).trim(),className:String(x.className).trim()}));
+ state.students.push(...added);
+ try{
+  localStorage.setItem(KEY,JSON.stringify(state));
+ }catch(err){
+  state.students.splice(before,added.length);
+  alert('Không thể lưu danh sách vào trình duyệt: '+err.message+'\\nHãy kiểm tra dung lượng lưu trữ hoặc xuất dữ liệu hiện tại trước khi thử lại.');
+  return;
+ }
+ // Vẽ lại riêng các khu vực liên quan trước; tránh một lỗi ở module khác làm gián đoạn nhập học sinh.
+ try{renderClasses()}catch(err){console.error('Lỗi cập nhật danh sách lớp:',err)}
+ try{renderDashboard()}catch(err){console.error('Lỗi cập nhật tổng quan:',err)}
+ const skipped=pendingExcelImport.length-valid.length;
+ document.getElementById('excelPreviewSummary').textContent=`Đã nhập thành công ${added.length} học sinh. Bỏ qua ${skipped} dòng trùng hoặc thiếu thông tin.`;
+ document.getElementById('excelPreviewTable').innerHTML='<div class="notice" style="margin:10px 0">✓ Đã lưu danh sách học sinh vào trình duyệt này. Bạn có thể kiểm tra danh sách bên dưới.</div>';
+ toast(`Đã nhập thành công ${added.length} học sinh.`);
+ pendingExcelImport=[];
+ // Giữ thông báo thành công hiển thị để người dùng xác nhận thao tác đã hoàn tất.
+}
+function cancelExcelImport(){
+ pendingExcelImport=[];
+ const panel=document.getElementById('excelPreviewPanel');
+ if(panel)panel.classList.add('hidden');
+ const tableEl=document.getElementById('excelPreviewTable');if(tableEl)tableEl.innerHTML='';
+}
+function parseCSVRows(text){
+ const rows=[];let row=[],cell='',quoted=false;
+ for(let i=0;i<text.length;i++){const ch=text[i],next=text[i+1];if(ch==='"'&&quoted&&next==='"'){cell+='"';i++}else if(ch==='"'){quoted=!quoted}else if((ch===','||ch===';'||ch==='\t')&&!quoted){row.push(cell);cell=''}else if((ch==='\n'||ch==='\r')&&!quoted){if(ch==='\r'&&next==='\n')i++;row.push(cell);if(row.some(v=>String(v).trim()))rows.push(row);row=[];cell=''}else cell+=ch}
+ row.push(cell);if(row.some(v=>String(v).trim()))rows.push(row);return rows;
+}
+function exportAssessments(){downloadCSV('bao_cao_danh_gia.csv',[['Ngày','Học sinh','Lớp','Rubric','Điểm trung bình','Minh chứng','Ghi chú','Đã duyệt'],...state.assessments.map(a=>[a.date,student(a.studentId)?.name||'Học sinh đã xóa',student(a.studentId)?.className||'',state.rubric.name,scoreText(a.scores),a.evidence,a.note,a.approved?'Có':'Chưa'])]);toast('Đã xuất báo cáo CSV.')}
+
+const QUIZ_LESSONS = [{"id":"b4","title":"Bài 4. Độ dịch chuyển và quãng đường đi được","desc":"Vị trí, hệ tọa độ, độ dịch chuyển có hướng và quãng đường là độ dài quỹ đạo.","lessonNo":4},{"id":"b5","title":"Bài 5. Tốc độ và vận tốc","desc":"Tốc độ trung bình, vận tốc trung bình, tức thời và tổng hợp vận tốc.","lessonNo":5},{"id":"b6","title":"Bài 6. Thực hành: Đo tốc độ của vật chuyển động","desc":"Đo quãng đường, thời gian, tính tốc độ; lặp phép đo và đánh giá nguồn sai số.","lessonNo":6},{"id":"b7","title":"Bài 7. Đồ thị độ dịch chuyển – thời gian","desc":"Biểu diễn d–t, đọc vị trí theo thời gian, xác định vận tốc từ độ dốc.","lessonNo":7},{"id":"b8","title":"Bài 8. Chuyển động thẳng biến đổi. Gia tốc","desc":"Chuyển động biến đổi, gia tốc trung bình và quan hệ dấu giữa vận tốc với gia tốc.","lessonNo":8},{"id":"b9","title":"Bài 9. Chuyển động thẳng biến đổi đều","desc":"Gia tốc không đổi, phương trình vận tốc, độ dịch chuyển và hệ thức không thời gian.","lessonNo":9},{"id":"b10","title":"Bài 10. Sự rơi tự do","desc":"Điều kiện rơi tự do, gia tốc g và các hệ thức rơi từ trạng thái nghỉ.","lessonNo":10},{"id":"b11","title":"Bài 11. Thực hành: Đo gia tốc rơi tự do","desc":"Đo độ cao và thời gian rơi, suy ra g; lặp phép đo và nhận diện sai số.","lessonNo":11},{"id":"b12","title":"Bài 12. Chuyển động ném","desc":"Phân tích thành phần ngang và đứng, ném ngang, thời gian rơi, tầm xa và quỹ đạo.","lessonNo":12}]
+let activeQuiz=null, quizClock=null, quizRemaining=0;
+let currentGeneratedQuiz=null;
+function renderPractice(){
+ const lesson=document.getElementById('quizLesson'),old=lesson.value;
+ lesson.innerHTML=QUIZ_LESSONS.map(x=>`<option value="${x.id}">${esc(x.title)}</option>`).join('');
+ if(QUIZ_LESSONS.some(x=>x.id===old))lesson.value=old;
+ const stu=document.getElementById('quizStudent'),oldStu=stu.value;
+ stu.innerHTML=state.students.map(x=>`<option value="${x.id}">${esc(x.name)} — ${esc(x.className)}</option>`).join('')||'<option value="">Chưa có học sinh</option>';
+ if(state.students.some(x=>x.id===oldStu))stu.value=oldStu;
+ updateQuizLessonInfo();renderQuizHistory();
+}
+function updateQuizLessonInfo(){
+ const l=QUIZ_LESSONS.find(x=>x.id===document.getElementById('quizLesson').value)||QUIZ_LESSONS[0];
+ const el=document.getElementById('quizLessonInfo');if(!l||!el)return;
+ el.innerHTML=`<b>${esc(l.title)}</b><p style="margin:6px 0 0">${esc(l.desc)}</p><small class="muted">Đề được AI tạo theo nội dung bài tương ứng trong Sổ tay kiến thức.</small>`;
+ const status=document.getElementById('aiQuizStatus');if(status)status.textContent='Chọn bài học và học sinh, sau đó nhấn “Tạo đề mới bằng AI”. Mỗi đề gồm 15 câu trắc nghiệm và 5 câu trả lời ngắn.';
+ currentGeneratedQuiz=null;
+}
+function getLessonKnowledge(lesson){
+ // Lấy đúng thẻ kiến thức có tiêu đề Bài tương ứng; không lấy bảng công thức chung hay bài khác.
+ const candidates=[...document.querySelectorAll('.knowledge-section')];
+ const source=candidates.find(el=>new RegExp(`\\bBÀI\\s+${lesson.lessonNo}\\b`,'i').test(el.querySelector('h3')?.textContent||''));
+ if(!source)return '';
+ return (source.innerText||source.textContent||'').replace(/\n{3,}/g,'\n\n').trim().slice(0,18000);
+}
+function getSeenQuestions(lessonId){
+ try{return JSON.parse(localStorage.getItem('physassess_ai_quiz_seen_'+lessonId)||'[]')}catch{return []}
+}
+function rememberQuestions(lessonId,quiz){
+ const old=getSeenQuestions(lessonId);
+ const fresh=[...quiz.mc.map(q=>q.q),...quiz.short.map(q=>q.q)];
+ localStorage.setItem('physassess_ai_quiz_seen_'+lessonId,JSON.stringify([...old,...fresh].slice(-180)));
+}
+async function generateAiQuiz(){
+ const lesson=QUIZ_LESSONS.find(x=>x.id===document.getElementById('quizLesson').value);
+ if(!lesson){toast('Không tìm thấy bài học.');return}
+ const studentId=document.getElementById('quizStudent').value;
+ if(!studentId){toast('Hãy chọn học sinh trước khi tạo đề.');return}
+ const knowledge=getLessonKnowledge(lesson);
+ if(knowledge.length<100){toast('Không tìm thấy nội dung bài học trong Sổ tay kiến thức.');return}
+ const btn=document.getElementById('generateAiQuizBtn'),status=document.getElementById('aiQuizStatus');
+ btn.disabled=true;btn.textContent='⏳ AI đang tạo đề...';status.textContent='Gemini đang đọc nội dung bài học trong Sổ tay và biên soạn đề mới. Quá trình có thể mất 10–30 giây.';
+ document.getElementById('quizWorkspace').classList.add('hidden');document.getElementById('quizResult').classList.add('hidden');
+ try{
+  const recent=getSeenQuestions(lesson.id);
+  const response=await fetch('/.netlify/functions/generate-quiz',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({lesson:{id:lesson.id,title:lesson.title,description:lesson.desc,knowledge},avoidQuestions:recent})});
+  const data=await response.json().catch(()=>({}));
+  if(!response.ok)throw new Error(data.error||`Dịch vụ AI trả về lỗi ${response.status}.`);
+  const quiz=data.quiz;
+  if(!quiz||!Array.isArray(quiz.mc)||quiz.mc.length!==15||!Array.isArray(quiz.short)||quiz.short.length!==5)throw new Error('Đề AI trả về chưa đủ 15 câu trắc nghiệm và 5 câu trả lời ngắn.');
+  const validMc=quiz.mc.every(q=>q&&typeof q.q==='string'&&Array.isArray(q.opts)&&q.opts.length===4&&['A','B','C','D'].includes(q.ans)&&typeof q.exp==='string');
+  const validShort=quiz.short.every(q=>q&&typeof q.q==='string'&&typeof q.answer==='string');
+  if(!validMc||!validShort)throw new Error('Một số câu hỏi AI tạo ra không đúng cấu trúc. Vui lòng tạo lại đề.');
+  currentGeneratedQuiz={id:lesson.id+'_ai_'+Date.now(),lessonId:lesson.id,title:lesson.title,desc:lesson.desc,mc:quiz.mc,short:quiz.short,generatedByAI:true,createdAt:new Date().toISOString()};
+  rememberQuestions(lesson.id,quiz);
+  status.textContent='✓ Đã tạo đề mới thành công: 15 câu trắc nghiệm và 5 câu trả lời ngắn. Nhấn “Bắt đầu làm bài” để làm đề vừa tạo.';
+  toast('Gemini đã tạo đề mới thành công.');
+ }catch(err){status.textContent='Chưa tạo được đề: '+err.message;toast(err.message||'Không thể tạo đề bằng AI.');}
+ finally{btn.disabled=false;btn.textContent='✦ Tạo đề mới bằng AI';}
+}
+function startQuiz(){
+ const lesson=QUIZ_LESSONS.find(x=>x.id===document.getElementById('quizLesson').value),sid=document.getElementById('quizStudent').value;
+ if(!lesson){toast('Không tìm thấy bài học.');return}
+ if(!sid){toast('Hãy thêm/chọn học sinh trong mục Lớp học & học sinh trước.');return}
+ if(!currentGeneratedQuiz||currentGeneratedQuiz.lessonId!==lesson.id){toast('Bạn cần nhấn “Tạo đề mới bằng AI” trước khi bắt đầu làm bài.');return}
+ activeQuiz={lesson:{...currentGeneratedQuiz},studentId:sid,answers:{},startedAt:Date.now()};
+ document.getElementById('quizTitle').textContent=lesson.title+' · Đề AI';
+ document.getElementById('quizStudentLabel').textContent='Học sinh: '+(student(sid)?.name||'');
+ document.getElementById('quizResult').classList.add('hidden');document.getElementById('quizWorkspace').classList.remove('hidden');
+ renderQuizQuestions();const mins=Number(document.getElementById('quizDuration').value);clearInterval(quizClock);quizRemaining=mins*60;
+ if(mins){updateQuizTimer();quizClock=setInterval(()=>{quizRemaining--;updateQuizTimer();if(quizRemaining<=0){clearInterval(quizClock);toast('Đã hết giờ. Bài làm được tự động nộp.');submitQuiz(true)}},1000)}else document.getElementById('quizTimer').textContent='Không giới hạn';
+ document.getElementById('quizWorkspace').scrollIntoView({behavior:'smooth',block:'start'});
+}
+function updateQuizTimer(){const m=Math.floor(quizRemaining/60),s=quizRemaining%60;document.getElementById('quizTimer').textContent=`Còn ${m}:${String(s).padStart(2,'0')}`}
+function renderQuizQuestions(){
+ const l=activeQuiz.lesson,holder=document.getElementById('quizQuestions');let html='<h3>Phần I. Trắc nghiệm (15 câu · 0,4 điểm/câu)</h3>';
+ l.mc.forEach((q,i)=>{html+=`<div class="quiz-question"><h4>Câu ${i+1}. ${esc(q.q)}</h4><div class="quiz-options">${q.opts.map((o,j)=>`<label class="quiz-option"><input type="radio" name="mc${i}" value="${'ABCD'[j]}" onchange="setQuizAnswer('mc${i}',this.value)"><span><b>${'ABCD'[j]}.</b> ${esc(o)}</span></label>`).join('')}</div></div>`});
+ html+='<h3 style="margin-top:26px">Phần II. Trả lời ngắn (5 câu · 0,8 điểm/câu)</h3><p class="muted" style="font-size:12px">Trình bày công thức, các bước tính toán, kết quả và đơn vị. Giáo viên đối chiếu đáp án tham khảo để chấm điểm.</p>';
+ l.short.forEach((q,i)=>{html+=`<div class="quiz-question quiz-short"><h4>Câu ${i+16}. ${esc(q.q)}</h4><textarea placeholder="Nhập lời giải và đáp số của em..." oninput="setQuizAnswer('short${i}',this.value)"></textarea></div>`});
+ holder.innerHTML=html;updateQuizProgress();
+}
+function setQuizAnswer(k,v){if(!activeQuiz)return;activeQuiz.answers[k]=v;updateQuizProgress()}
+function updateQuizProgress(){if(!activeQuiz)return;const n=Object.values(activeQuiz.answers).filter(x=>String(x).trim()).length;document.getElementById('quizProgress').textContent=n+'/20 câu';document.getElementById('quizProgressBar').style.width=(n/20*100)+'%'}
+function cancelQuiz(){if(!confirm('Bạn muốn hủy bài làm hiện tại? Các câu trả lời chưa nộp sẽ không được lưu.'))return;clearInterval(quizClock);activeQuiz=null;document.getElementById('quizWorkspace').classList.add('hidden')}
+function submitQuiz(auto=false){
+ if(!activeQuiz)return;const unanswered=20-Object.values(activeQuiz.answers).filter(x=>String(x).trim()).length;
+ if(!auto&&unanswered&&!confirm(`Còn ${unanswered} câu chưa trả lời. Bạn vẫn muốn nộp bài?`))return;
+ clearInterval(quizClock);const l=activeQuiz.lesson;let correct=0;
+ const details=l.mc.map((q,i)=>{const given=activeQuiz.answers['mc'+i]||'';const ok=given===q.ans;if(ok)correct++;return {question:i+1,given,answer:q.ans,ok,explanation:q.exp}});
+ const mcScore=correct*0.4;const shortAnswered=l.short.filter((q,i)=>String(activeQuiz.answers['short'+i]||'').trim()).length;
+ const attempt={id:uid('q'),studentId:activeQuiz.studentId,studentName:student(activeQuiz.studentId)?.name||'Học sinh',lessonId:l.lessonId,lessonTitle:l.title,score:mcScore,correct,totalMc:15,shortAnswered,date:new Date().toISOString().slice(0,10),answers:activeQuiz.answers,details};
+ state.quizAttempts=state.quizAttempts||[];state.quizAttempts.push(attempt);localStorage.setItem(KEY,JSON.stringify(state));showQuizResult(attempt,l);renderQuizHistory();activeQuiz=null;document.getElementById('quizWorkspace').classList.add('hidden');
+}
+function showQuizResult(a,l){
+ const box=document.getElementById('quizResult');box.classList.remove('hidden');const percent=Math.round(a.correct/15*100);
+ let html=`<div class="card-title"><div><h3>Kết quả bài kiểm tra</h3><p>${esc(a.studentName)} · ${esc(l.title)}</p></div><span class="pill ${percent>=80?'green':percent>=50?'blue':'amber'}">${percent>=80?'Nắm vững':percent>=50?'Đạt yêu cầu':'Cần ôn tập'}</span></div><div class="result-score">${a.score.toFixed(1)}/6 điểm</div><p class="muted" style="font-size:12px">Trắc nghiệm đúng ${a.correct}/15 câu (${percent}%). Có ${a.shortAnswered}/5 câu trả lời ngắn đã nhập.</p><div class="notice">Phần trắc nghiệm được chấm tự động, tối đa 6 điểm. Phần trả lời ngắn tối đa 4 điểm (0,8 điểm/câu), giáo viên chấm dựa trên đáp án và lời giải tham khảo bên dưới để hoàn thiện điểm tổng kết trên thang 10.</div><h3>Đáp án và giải thích trắc nghiệm</h3>`;
+ a.details.forEach(d=>{const q=l.mc[d.question-1];html+=`<div class="result-detail"><b>Câu ${d.question} · ${d.ok?'✓ Chính xác':'✕ Chưa chính xác'}</b><p>Em chọn: ${esc(d.given||'Chưa trả lời')} · Đáp án: <b>${esc(d.answer)}</b></p><small>${esc(q.exp)}</small></div>`});
+ html+='<h3 style="margin-top:24px">Đáp án tham khảo – 5 câu trả lời ngắn</h3>';
+ l.short.forEach((q,i)=>{html+=`<div class="result-detail"><b>Câu ${i+16}</b><p><b>Bài làm của học sinh:</b> ${esc(a.answers['short'+i]||'Chưa trả lời')}</p><div class="quiz-answer"><b>Đáp án/hướng dẫn:</b> ${esc(q.answer)}</div></div>`});
+ html+=`<div class="actions" style="margin-top:16px"><button class="secondary" onclick="printQuizResult()">⎙ In kết quả</button><button class="primary" onclick="document.getElementById('quizResult').classList.add('hidden');generateAiQuiz()">✦ Tạo đề AI khác</button></div>`;
+ box.innerHTML=html;box.scrollIntoView({behavior:'smooth',block:'start'});
+}
+function printQuizResult(){const box=document.getElementById('quizResult');const w=window.open('','_blank');if(!w){toast('Trình duyệt đang chặn cửa sổ in.');return}w.document.write('<html lang="vi"><head><meta charset="utf-8"><title>Kết quả bài kiểm tra</title><style>body{font:14px Arial;padding:24px;line-height:1.6}h3{margin-top:24px}.result-detail,.quiz-answer{border:1px solid #ddd;padding:10px;margin:8px 0}.quiz-answer{background:#f3f8f5}</style></head><body>'+box.innerHTML+'</body></html>');w.document.close();w.focus();w.print()}
+renderAll();
+</script>
+</body>
+</html>
